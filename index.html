@@ -318,22 +318,14 @@
 
       
         
-          
-            <p>In Google Research’s paper <a href="https://arxiv.org/pdf/1611.10012.pdf" target="_blank" rel="external"><em>Speed/accuracy trade-offs for modern convolutional object detectors</em></a>, an experimental comparison is performed for the three popular object detectors (Faster R-CNN, R-FCN and SSD). Here I want to take note of some important results from this paper. Models details and configurations can be found in the paper.</p>
-<h4 id="Accuracy-vs-time"><a href="#Accuracy-vs-time" class="headerlink" title="Accuracy vs time"></a>Accuracy vs time</h4><p><img src="https://snag.gy/tKojnq.jpg" alt=""></p>
-<p>In general, R-FCN and SSD are faster than Faster R-CNN. Among fastest models, SSD with Inception v2 and Mbilenet are most accurate. Faster R-CNN with Inception Resnet attains the best possible accuracy.</p>
-<h4 id="The-effect-of-the-feature-extractor"><a href="#The-effect-of-the-feature-extractor" class="headerlink" title="The effect of the feature extractor"></a>The effect of the feature extractor</h4><p><img src="https://snag.gy/kOS3Ja.jpg" alt=""></p>
-<p>Generally, with better classification accuracy, the detector (Faster R-CNN, R-FCN) can have better detection ability. However, the performance of SSD appears to be less reliant on its feature extractor’s classification accuracy.</p>
-<h4 id="The-effect-of-object-size"><a href="#The-effect-of-object-size" class="headerlink" title="The effect of object size"></a>The effect of object size</h4><p><img src="https://snag.gy/ZIkrnO.jpg" alt=""></p>
-<p>All methods do better on large objects. SSD models are typically poor on small object. But SSD can outperform Faster R-CNN and R-FCN on large objects.</p>
-<h4 id="The-effect-of-image-size"><a href="#The-effect-of-image-size" class="headerlink" title="The effect of image size"></a>The effect of image size</h4><p><img src="https://snag.gy/p2hKdP.jpg" alt=""></p>
-<h4 id="The-effect-of-the-number-of-proposals"><a href="#The-effect-of-the-number-of-proposals" class="headerlink" title="The effect of the number of proposals"></a>The effect of the number of proposals</h4><p><img src="https://snag.gy/HynisT.jpg" alt=""></p>
-<p>For Faster R-CNN and R-FCN, we can adjust the number of proposals. For Faster R-CNN, reducing number of proposals can lead to significant computational savings. According to the figure above, the sweet spot is at 50 proposals. For R-FCN, the savings are minimal.</p>
-<h4 id="FLOPs-analysis"><a href="#FLOPs-analysis" class="headerlink" title="FLOPs analysis"></a>FLOPs analysis</h4><p>For denser block models such as Resnet 101, FLOPs/GPU time is typically greater than 1. For Inception and Mobilenet models, this ratio is typically less than 1</p>
-<h4 id="Memory-analysis"><a href="#Memory-analysis" class="headerlink" title="Memory analysis"></a>Memory analysis</h4><p><img src="https://snag.gy/2e86Kc.jpg" alt=""></p>
-<h4 id="IOU-thresholds"><a href="#IOU-thresholds" class="headerlink" title="IOU thresholds"></a>IOU thresholds</h4><p>Detectors that have poor performance at the higher IOU thresholds always also show poor performance at the lower IOU thresholds.</p>
-
-          
+          <p>In Google Research’s paper <a href="https://arxiv.org/pdf/1611.10012.pdf" target="_blank" rel="external"><em>Speed/accuracy trade-offs for modern convolutional object detectors</em></a>, an experimental comparison is performed for the three popular object detectors (Faster R-CNN, R-FCN and SSD). Here I want to take note of some important results from this paper. Models details and configurations can be found in the paper.<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/22/detectors/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
