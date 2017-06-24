@@ -103,7 +103,7 @@
 <meta property="og:image" content="https://snag.gy/SKrPVD.jpg">
 <meta property="og:image" content="https://snag.gy/ct4DJk.jpg">
 <meta property="og:image" content="https://snag.gy/bBsSOt.jpg">
-<meta property="og:updated_time" content="2017-06-24T13:56:58.000Z">
+<meta property="og:updated_time" content="2017-06-24T14:02:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Reccurent Rolling Convolution (RRC)">
 <meta name="twitter:description" content="This paper is accepted to CVPR 2017. It’s an interesting paper that borrowes ideas from RNN for combining the information from both lower and higher layers’ feature maps.">
@@ -326,24 +326,21 @@
 
       
         <p>This paper is accepted to CVPR 2017. It’s an interesting paper that borrowes ideas from RNN for combining the information from both lower and higher layers’ feature maps.<br><a id="more"></a></p>
-<p>###SSD and RRC<br>The RRC model can be viewed as a recurrent version of SSD. And in my opinion, it’s a SSD specially tuned to perform well in detecting small objects.</p>
+<h3 id="SSD-and-RRC"><a href="#SSD-and-RRC" class="headerlink" title="SSD and RRC"></a>SSD and RRC</h3><p>The RRC model can be viewed as a recurrent version of SSD. And in my opinion, it’s a SSD specially tuned to perform well in detecting small objects.</p>
 <p> In SSD, each feature layer is responsible for detecting particular scales of objects. Higher layers with larger receptive fields are responsive to the larger objects. Lower layers are designed to be more responsive to small objects. The problem is the lower layers capture more fine details of the input object but lack the semantic information in higher layers. And the higher layers have larger receptive fields but lose the details of thin and small structures.</p>
-<p> <img src="https://snag.gy/qUT4ai.jpg" alt=""><br> <em>SSD</em></p>
+<p> <img src="https://snag.gy/qUT4ai.jpg" alt=""><br> <em>Figure 1. SSD</em></p>
 <p> RRC tries to solve the problem by combining information from all the feature layers. Especially, in my opinion, it’s adding the semantic information from higher layers to the lower layers so as to perform better on small objects.</p>
-<p> <img src="https://snag.gy/iRLnxZ.jpg" alt=""><br> <em>RRC</em></p>
+<p> <img src="https://snag.gy/iRLnxZ.jpg" alt=""><br> <em>Figure 2. RRC</em></p>
 <p> The way RRC solves this problem is by doing so-called <strong>rolling</strong> and <strong>recurrent</strong>.</p>
-<p>###Rolling</p>
-<p><img src="https://snag.gy/4lskH7.jpg" alt=""></p>
+<h3 id="Rolling"><a href="#Rolling" class="headerlink" title="Rolling"></a>Rolling</h3><p><img src="https://snag.gy/4lskH7.jpg" alt=""></p>
 <p>For layer p, we first have a 12 * 40 * 256 feature map. Then by doing convolution and max pooling, we can generate a 12 * 14 *19 feature map from layer p-1’s feature map. By doing deconvolution (transposed convolution), we can generate a 12 * 14 *19 feature map from layer p+1’s feature map. Then we concatenate these three feature maps and we get a 12*40*(19+256+19) feature map. </p>
-<p>###Recurrent</p>
-<p><img src="https://snag.gy/SKrPVD.jpg" alt=""></p>
+<h3 id="Recurrent"><a href="#Recurrent" class="headerlink" title="Recurrent"></a>Recurrent</h3><p><img src="https://snag.gy/SKrPVD.jpg" alt=""></p>
 <p>After having the 12*40*(19+256+19) feature map, we perform a 1*1*256 convolution on this feature map so as to reduce it back to 12*40*256.</p>
-<p>###Bounding Box Regression Space Discretization<br>A group of feature maps in a layer (e.g. conv4_3) is responsible for the regression for bounding boxes of a certain size range. SSD has one regressor for one certain size range. But in RRC, they further divide the range to several finer ranges and assign different regressors for each fine range respectively. It’s like the idea of piecewise linear regression.</p>
-<p>###Experiments</p>
-<p>####The outputs of each RRC<br>RRC was used for 5 times in the training, so there are 6 outputs and 6 corresponding loss functions.</p>
+<h3 id="Bounding-Box-Regression-Space-Discretization"><a href="#Bounding-Box-Regression-Space-Discretization" class="headerlink" title="Bounding Box Regression Space Discretization"></a>Bounding Box Regression Space Discretization</h3><p>A group of feature maps in a layer (e.g. conv4_3) is responsible for the regression for bounding boxes of a certain size range. SSD has one regressor for one certain size range. But in RRC, they further divide the range to several finer ranges and assign different regressors for each fine range respectively. It’s like the idea of piecewise linear regression.</p>
+<h3 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h3><h4 id="The-outputs-of-each-RRC"><a href="#The-outputs-of-each-RRC" class="headerlink" title="The outputs of each RRC"></a>The outputs of each RRC</h4><p>RRC was used for 5 times in the training, so there are 6 outputs and 6 corresponding loss functions.</p>
 <p><img src="https://snag.gy/ct4DJk.jpg" alt=""></p>
 <p>We expect the loss of later output to be smaller. But the fact is the lowest loss is achieved in fourth output. The reason why RRC eventually degenerates the prediction is mainly because the lack of an effective memory mechanism (e.g. LSTM).</p>
-<p>####Results on KITTI<br>In the paper, they only have results for KITTI datasets.</p>
+<h4 id="Results-on-KITTI"><a href="#Results-on-KITTI" class="headerlink" title="Results on KITTI"></a>Results on KITTI</h4><p>In the paper, they only have results for KITTI datasets.</p>
 <p><img src="https://snag.gy/bBsSOt.jpg" alt=""></p>
 <p>So the performance on datasets like PASCAL VOC and COCO is still unknown. And the model’s performance on multi-class detection is also a question.</p>
 
@@ -445,8 +442,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://snag.gy/AoQFRM.jpg"
@@ -519,6 +525,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#SSD-and-RRC"><span class="nav-number">1.</span> <span class="nav-text">SSD and RRC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rolling"><span class="nav-number">2.</span> <span class="nav-text">Rolling</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Recurrent"><span class="nav-number">3.</span> <span class="nav-text">Recurrent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bounding-Box-Regression-Space-Discretization"><span class="nav-number">4.</span> <span class="nav-text">Bounding Box Regression Space Discretization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Experiments"><span class="nav-number">5.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#The-outputs-of-each-RRC"><span class="nav-number">5.1.</span> <span class="nav-text">The outputs of each RRC</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Results-on-KITTI"><span class="nav-number">5.2.</span> <span class="nav-text">Results on KITTI</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
