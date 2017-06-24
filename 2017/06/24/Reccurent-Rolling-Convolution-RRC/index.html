@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="deep learning,object detection," />
 
 
 
@@ -90,12 +90,24 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Changsong&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2017/06/index.html">
+<meta name="description" content="This paper is accepted to CVPR 2017. It’s an interesting paper that borrowes ideas from RNN for combining the information from both lower and higher layers’ feature maps.">
+<meta name="keywords" content="deep learning,object detection">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Reccurent Rolling Convolution (RRC)">
+<meta property="og:url" content="http://yoursite.com/2017/06/24/Reccurent-Rolling-Convolution-RRC/index.html">
 <meta property="og:site_name" content="Changsong&#39;s Blog">
+<meta property="og:description" content="This paper is accepted to CVPR 2017. It’s an interesting paper that borrowes ideas from RNN for combining the information from both lower and higher layers’ feature maps.">
+<meta property="og:image" content="https://snag.gy/qUT4ai.jpg">
+<meta property="og:image" content="https://snag.gy/iRLnxZ.jpg">
+<meta property="og:image" content="https://snag.gy/4lskH7.jpg">
+<meta property="og:image" content="https://snag.gy/SKrPVD.jpg">
+<meta property="og:image" content="https://snag.gy/ct4DJk.jpg">
+<meta property="og:image" content="https://snag.gy/bBsSOt.jpg">
+<meta property="og:updated_time" content="2017-06-24T13:56:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Changsong&#39;s Blog">
+<meta name="twitter:title" content="Reccurent Rolling Convolution (RRC)">
+<meta name="twitter:description" content="This paper is accepted to CVPR 2017. It’s an interesting paper that borrowes ideas from RNN for combining the information from both lower and higher layers’ feature maps.">
+<meta name="twitter:image" content="https://snag.gy/qUT4ai.jpg">
 
 
 
@@ -123,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2017/06/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/06/24/Reccurent-Rolling-Convolution-RRC/"/>
 
 
 
 
 
-  <title>Archive | Changsong's Blog</title>
+  <title>Reccurent Rolling Convolution (RRC) | Changsong's Blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -155,7 +167,7 @@
     
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -239,103 +251,170 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      Um..! 3 posts in total. Keep on posting.
-    </span>
-
+  <div id="posts" class="posts-expand">
     
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/06/24/Reccurent-Rolling-Convolution-RRC/" itemprop="url">
-              
-                <span itemprop="name">Reccurent Rolling Convolution (RRC)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-06-24T08:52:44-05:00"
-              content="2017-06-24" >
-          06-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/06/22/detectors/" itemprop="url">
-              
-                <span itemprop="name">Comparing CNN based object detectors</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-06-22T21:22:56-05:00"
-              content="2017-06-22" >
-          06-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
 
   
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/24/Reccurent-Rolling-Convolution-RRC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Changsong Dong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://snag.gy/AoQFRM.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Changsong's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Reccurent Rolling Convolution (RRC)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-24T08:52:44-05:00">
+                2017-06-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>This paper is accepted to CVPR 2017. It’s an interesting paper that borrowes ideas from RNN for combining the information from both lower and higher layers’ feature maps.<br><a id="more"></a></p>
+<p>###SSD and RRC<br>The RRC model can be viewed as a recurrent version of SSD. And in my opinion, it’s a SSD specially tuned to perform well in detecting small objects.</p>
+<p> In SSD, each feature layer is responsible for detecting particular scales of objects. Higher layers with larger receptive fields are responsive to the larger objects. Lower layers are designed to be more responsive to small objects. The problem is the lower layers capture more fine details of the input object but lack the semantic information in higher layers. And the higher layers have larger receptive fields but lose the details of thin and small structures.</p>
+<p> <img src="https://snag.gy/qUT4ai.jpg" alt=""><br> <em>SSD</em></p>
+<p> RRC tries to solve the problem by combining information from all the feature layers. Especially, in my opinion, it’s adding the semantic information from higher layers to the lower layers so as to perform better on small objects.</p>
+<p> <img src="https://snag.gy/iRLnxZ.jpg" alt=""><br> <em>RRC</em></p>
+<p> The way RRC solves this problem is by doing so-called <strong>rolling</strong> and <strong>recurrent</strong>.</p>
+<p>###Rolling</p>
+<p><img src="https://snag.gy/4lskH7.jpg" alt=""></p>
+<p>For layer p, we first have a 12 * 40 * 256 feature map. Then by doing convolution and max pooling, we can generate a 12 * 14 *19 feature map from layer p-1’s feature map. By doing deconvolution (transposed convolution), we can generate a 12 * 14 *19 feature map from layer p+1’s feature map. Then we concatenate these three feature maps and we get a 12*40*(19+256+19) feature map. </p>
+<p>###Recurrent</p>
+<p><img src="https://snag.gy/SKrPVD.jpg" alt=""></p>
+<p>After having the 12*40*(19+256+19) feature map, we perform a 1*1*256 convolution on this feature map so as to reduce it back to 12*40*256.</p>
+<p>###Bounding Box Regression Space Discretization<br>A group of feature maps in a layer (e.g. conv4_3) is responsible for the regression for bounding boxes of a certain size range. SSD has one regressor for one certain size range. But in RRC, they further divide the range to several finer ranges and assign different regressors for each fine range respectively. It’s like the idea of piecewise linear regression.</p>
+<p>###Experiments</p>
+<p>####The outputs of each RRC<br>RRC was used for 5 times in the training, so there are 6 outputs and 6 corresponding loss functions.</p>
+<p><img src="https://snag.gy/ct4DJk.jpg" alt=""></p>
+<p>We expect the loss of later output to be smaller. But the fact is the lowest loss is achieved in fourth output. The reason why RRC eventually degenerates the prediction is mainly because the lack of an effective memory mechanism (e.g. LSTM).</p>
+<p>####Results on KITTI<br>In the paper, they only have results for KITTI datasets.</p>
+<p><img src="https://snag.gy/bBsSOt.jpg" alt=""></p>
+<p>So the performance on datasets like PASCAL VOC and COCO is still unknown. And the model’s performance on multi-class detection is also a question.</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/deep-learning/" rel="tag"># deep learning</a>
+          
+            <a href="/tags/object-detection/" rel="tag"># object detection</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/22/detectors/" rel="next" title="Comparing CNN based object detectors">
+                <i class="fa fa-chevron-left"></i> Comparing CNN based object detectors
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -343,6 +422,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -556,11 +639,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
 
 
   
