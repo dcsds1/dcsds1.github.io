@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="python," />
 
 
 
@@ -90,13 +90,19 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="Python 2.x’s support for Unicode was a messy problem for me when I started learning Python. Today I read through the official tutorial and want to take note of it.  Note: In Python 3, there are some c">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Unicode">
+<meta property="og:url" content="http://yoursite.com/2017/06/25/Python-Unicode/index.html">
 <meta property="og:site_name" content="Changsong&#39;s Blog">
-<meta property="og:updated_time" content="2017-05-19T02:22:36.000Z">
+<meta property="og:description" content="Python 2.x’s support for Unicode was a messy problem for me when I started learning Python. Today I read through the official tutorial and want to take note of it.  Note: In Python 3, there are some c">
+<meta property="og:image" content="https://snag.gy/iMQTrP.jpg">
+<meta property="og:updated_time" content="2017-06-25T15:51:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
+<meta name="twitter:title" content="Python Unicode">
+<meta name="twitter:description" content="Python 2.x’s support for Unicode was a messy problem for me when I started learning Python. Today I read through the official tutorial and want to take note of it.  Note: In Python 3, there are some c">
+<meta name="twitter:image" content="https://snag.gy/iMQTrP.jpg">
 
 
 
@@ -124,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/06/25/Python-Unicode/"/>
 
 
 
 
 
-  <title>tags | Changsong's Blog</title>
+  <title>Python Unicode | Changsong's Blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -156,7 +162,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -231,25 +237,181 @@
             
 
   <div id="posts" class="posts-expand">
-  <header class="post-header">
+    
 
-	<h1 class="post-title" itemprop="name headline">tags</h1>
+  
 
+  
+  
+  
 
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/25/Python-Unicode/">
 
-</header>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Changsong Dong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://snag.gy/AoQFRM.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Changsong's Blog">
+    </span>
 
     
-    
-      <div class="tag-cloud">
-        <div class="tag-cloud-title">
-            3 tags in total
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python Unicode</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-25T10:50:31-05:00">
+                2017-06-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/06/25/Python-Unicode/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/06/25/Python-Unicode/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/06/25/Python-Unicode/" class="leancloud_visitors" data-flag-title="Python Unicode">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
         </div>
-        <div class="tag-cloud-tags">
-          <a href="/tags/deep-learning/" style="font-size: 12px; color: #ccc">deep learning</a> <a href="/tags/object-detection/" style="font-size: 12px; color: #ccc">object detection</a> <a href="/tags/python/" style="font-size: 12px; color: #ccc">python</a>
-        </div>
-      </div>
+      </header>
     
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Python 2.x’s support for Unicode was a messy problem for me when I started learning Python. Today I read through the official tutorial and want to take note of it. </p>
+<p>Note: In Python 3, there are some changes. This post is only based on Python 2.<br><a id="more"></a></p>
+<h3 id="Brief-history"><a href="#Brief-history" class="headerlink" title="Brief history"></a>Brief history</h3><p>First, we need to understand that we are talking about using numbers to represent characters. Ok, now, history starts.</p>
+<p><strong>In 1968</strong>, ASCII is invented. It was an American-developed standard. Numeric values from 0 to 127 are assigned to various characters. For example, the lowercase letter ‘a’ is assigned 97 as its code value. However, ASCII is not enough to represent other languages’ characters like French characters.</p>
+<p>So <strong>in 1980s</strong>, people started develop the Unicode Standard. Unicode started out using 16-bit characters instead of 8-bit characters.</p>
+<h3 id="Encodings-and-decodings-in-Python-2"><a href="#Encodings-and-decodings-in-Python-2" class="headerlink" title="Encodings and decodings in Python 2"></a>Encodings and decodings in Python 2</h3><p>The Unicode standard describes how characters are represented by code points. For example, ‘a’ is 0061. 0061 is the code point. In the standard, a code point is written using the notation U+12ca to mean the character with value 0x12ca (4810 decimal). Here is a <a href="http://inamidst.com/stuff/unidata/" target="_blank" rel="external">Unicode codepoint chart</a>.</p>
+<p>The Unicode string needs to be represented as a set of bytes (meaning, values from 0–255) in memory. The rules for translating a Unicode string into a sequence of bytes are called an encoding.</p>
+<p>In Python 2.x, a Python string is a sequence of bytes. And Python byte strings (str type) have an encoding, Unicode does not. So you can convert a Unicode string to a Python byte string using <em>.encode(encoding)</em>, and you can convert a byte string to a Unicode string using <em>.decode(encoding)</em>. A code example is given below.</p>
+<p><img src="https://snag.gy/iMQTrP.jpg" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; &apos;abc&apos;.decode(&apos;utf-8&apos;)  # str to unicode</div><div class="line">u&apos;abc&apos;</div><div class="line">&gt;&gt;&gt; u&apos;abc&apos;.encode(&apos;utf-8&apos;) # unicode to str</div><div class="line">&apos;abc&apos;</div></pre></td></tr></table></figure>
+<h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h4><ol>
+<li><a href="https://docs.python.org/2/howto/unicode.html" target="_blank" rel="external">Unicode HOWTO</a></li>
+<li>Some very good questions and answers from stackoverflow:<br><a href="https://stackoverflow.com/questions/10288016/usage-of-unicode-and-encode-functions-in-python?noredirect=1&amp;lq=1" target="_blank" rel="external">https://stackoverflow.com/questions/10288016/usage-of-unicode-and-encode-functions-in-python?noredirect=1&amp;lq=1</a><br><a href="https://stackoverflow.com/questions/368805/python-unicodedecodeerror-am-i-misunderstanding-encode?noredirect=1&amp;lq=1" target="_blank" rel="external">https://stackoverflow.com/questions/368805/python-unicodedecodeerror-am-i-misunderstanding-encode?noredirect=1&amp;lq=1</a><br><a href="https://stackoverflow.com/questions/447107/what-is-the-difference-between-encode-decode" target="_blank" rel="external">https://stackoverflow.com/questions/447107/what-is-the-difference-between-encode-decode</a></li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/25/Static-methods-and-class-methods-in-Python/" rel="next" title="Static methods and class methods in Python">
+                <i class="fa fa-chevron-left"></i> Static methods and class methods in Python
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -288,8 +450,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://snag.gy/AoQFRM.jpg"
@@ -362,6 +533,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Brief-history"><span class="nav-number">1.</span> <span class="nav-text">Brief history</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Encodings-and-decodings-in-Python-2"><span class="nav-number">2.</span> <span class="nav-text">Encodings and decodings in Python 2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Reference"><span class="nav-number">2.1.</span> <span class="nav-text">Reference:</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -482,6 +669,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
 
   
 
@@ -502,9 +693,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/tags/index.html';
-          this.page.identifier = 'tags/index.html';
-          this.page.title = 'tags';
+          this.page.url = 'http://yoursite.com/2017/06/25/Python-Unicode/';
+          this.page.identifier = '2017/06/25/Python-Unicode/';
+          this.page.title = 'Python Unicode';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://dcsds1.disqus.com/embed.js';
