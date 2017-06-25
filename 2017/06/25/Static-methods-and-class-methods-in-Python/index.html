@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="deep learning,object detection," />
+  <meta name="keywords" content="python," />
 
 
 
@@ -90,24 +90,17 @@
 
 
 
-<meta name="description" content="In Google Research’s paper Speed/accuracy trade-offs for modern convolutional object detectors, an experimental comparison is performed for the three popular object detectors (Faster R-CNN, R-FCN and">
-<meta name="keywords" content="deep learning,object detection">
+<meta name="description" content="In this post, I want to talk about static methods and class methods in Python 2. There are many related questions on Stack Overflow, and I want to summarize the ideas of the answers.">
+<meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Comparing CNN based object detectors">
-<meta property="og:url" content="http://yoursite.com/2017/06/22/detectors/index.html">
+<meta property="og:title" content="Static methods and class methods in Python">
+<meta property="og:url" content="http://yoursite.com/2017/06/25/Static-methods-and-class-methods-in-Python/index.html">
 <meta property="og:site_name" content="Changsong&#39;s Blog">
-<meta property="og:description" content="In Google Research’s paper Speed/accuracy trade-offs for modern convolutional object detectors, an experimental comparison is performed for the three popular object detectors (Faster R-CNN, R-FCN and">
-<meta property="og:image" content="https://snag.gy/tKojnq.jpg">
-<meta property="og:image" content="https://snag.gy/kOS3Ja.jpg">
-<meta property="og:image" content="https://snag.gy/ZIkrnO.jpg">
-<meta property="og:image" content="https://snag.gy/p2hKdP.jpg">
-<meta property="og:image" content="https://snag.gy/HynisT.jpg">
-<meta property="og:image" content="https://snag.gy/2e86Kc.jpg">
-<meta property="og:updated_time" content="2017-06-23T02:41:06.000Z">
+<meta property="og:description" content="In this post, I want to talk about static methods and class methods in Python 2. There are many related questions on Stack Overflow, and I want to summarize the ideas of the answers.">
+<meta property="og:updated_time" content="2017-06-25T15:48:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Comparing CNN based object detectors">
-<meta name="twitter:description" content="In Google Research’s paper Speed/accuracy trade-offs for modern convolutional object detectors, an experimental comparison is performed for the three popular object detectors (Faster R-CNN, R-FCN and">
-<meta name="twitter:image" content="https://snag.gy/tKojnq.jpg">
+<meta name="twitter:title" content="Static methods and class methods in Python">
+<meta name="twitter:description" content="In this post, I want to talk about static methods and class methods in Python 2. There are many related questions on Stack Overflow, and I want to summarize the ideas of the answers.">
 
 
 
@@ -135,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/06/22/detectors/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/06/25/Static-methods-and-class-methods-in-Python/"/>
 
 
 
 
 
-  <title>Comparing CNN based object detectors | Changsong's Blog</title>
+  <title>Static methods and class methods in Python | Changsong's Blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -251,7 +244,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/22/detectors/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/25/Static-methods-and-class-methods-in-Python/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Changsong Dong">
@@ -268,7 +261,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Comparing CNN based object detectors</h1>
+          <h1 class="post-title" itemprop="name headline">Static methods and class methods in Python</h1>
         
 
         <div class="post-meta">
@@ -280,8 +273,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-22T21:22:56-05:00">
-                2017-06-22
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-25T10:46:07-05:00">
+                2017-06-25
               </time>
             
 
@@ -299,9 +292,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/06/22/detectors/#comments" itemprop="discussionUrl">
+                <a href="/2017/06/25/Static-methods-and-class-methods-in-Python/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/06/22/detectors/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/06/25/Static-methods-and-class-methods-in-Python/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -309,7 +302,7 @@
 
           
           
-             <span id="/2017/06/22/detectors/" class="leancloud_visitors" data-flag-title="Comparing CNN based object detectors">
+             <span id="/2017/06/25/Static-methods-and-class-methods-in-Python/" class="leancloud_visitors" data-flag-title="Static methods and class methods in Python">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -337,19 +330,34 @@
       
 
       
-        <p>In Google Research’s paper <a href="https://arxiv.org/pdf/1611.10012.pdf" target="_blank" rel="external"><em>Speed/accuracy trade-offs for modern convolutional object detectors</em></a>, an experimental comparison is performed for the three popular object detectors (Faster R-CNN, R-FCN and SSD). Here I want to take note of some important results from this paper. Models details and configurations can be found in the paper.<br><a id="more"></a></p>
-<h4 id="Accuracy-vs-time"><a href="#Accuracy-vs-time" class="headerlink" title="Accuracy vs time"></a>Accuracy vs time</h4><p><img src="https://snag.gy/tKojnq.jpg" alt=""></p>
-<p>In general, R-FCN and SSD are faster than Faster R-CNN. Among fastest models, SSD with Inception v2 and Mbilenet are most accurate. Faster R-CNN with Inception Resnet attains the best possible accuracy.</p>
-<h4 id="The-effect-of-the-feature-extractor"><a href="#The-effect-of-the-feature-extractor" class="headerlink" title="The effect of the feature extractor"></a>The effect of the feature extractor</h4><p><img src="https://snag.gy/kOS3Ja.jpg" alt=""></p>
-<p>Generally, with better classification accuracy, the detector (Faster R-CNN, R-FCN) can have better detection ability. However, the performance of SSD appears to be less reliant on its feature extractor’s classification accuracy.</p>
-<h4 id="The-effect-of-object-size"><a href="#The-effect-of-object-size" class="headerlink" title="The effect of object size"></a>The effect of object size</h4><p><img src="https://snag.gy/ZIkrnO.jpg" alt=""></p>
-<p>All methods do better on large objects. SSD models are typically poor on small object. But SSD can outperform Faster R-CNN and R-FCN on large objects.</p>
-<h4 id="The-effect-of-image-size"><a href="#The-effect-of-image-size" class="headerlink" title="The effect of image size"></a>The effect of image size</h4><p><img src="https://snag.gy/p2hKdP.jpg" alt=""></p>
-<h4 id="The-effect-of-the-number-of-proposals"><a href="#The-effect-of-the-number-of-proposals" class="headerlink" title="The effect of the number of proposals"></a>The effect of the number of proposals</h4><p><img src="https://snag.gy/HynisT.jpg" alt=""></p>
-<p>For Faster R-CNN and R-FCN, we can adjust the number of proposals. For Faster R-CNN, reducing number of proposals can lead to significant computational savings. According to the figure above, the sweet spot is at 50 proposals. For R-FCN, the savings are minimal.</p>
-<h4 id="FLOPs-analysis"><a href="#FLOPs-analysis" class="headerlink" title="FLOPs analysis"></a>FLOPs analysis</h4><p>For denser block models such as Resnet 101, FLOPs/GPU time is typically greater than 1. For Inception and Mobilenet models, this ratio is typically less than 1</p>
-<h4 id="Memory-analysis"><a href="#Memory-analysis" class="headerlink" title="Memory analysis"></a>Memory analysis</h4><p><img src="https://snag.gy/2e86Kc.jpg" alt=""></p>
-<h4 id="IOU-thresholds"><a href="#IOU-thresholds" class="headerlink" title="IOU thresholds"></a>IOU thresholds</h4><p>Detectors that have poor performance at the higher IOU thresholds always also show poor performance at the lower IOU thresholds.</p>
+        <p>In this post, I want to talk about static methods and class methods in Python 2. There are many related questions on Stack Overflow, and I want to summarize the ideas of the answers.<br><a id="more"></a></p>
+<h3 id="Bound"><a href="#Bound" class="headerlink" title="Bound"></a>Bound</h3><p>First we define a class and its methods.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; class MethodsExample(object):</div><div class="line">...     def __init__(self, var):</div><div class="line">...         self.var = var</div><div class="line">...     def foo(self):</div><div class="line">...         return self.var</div></pre></td></tr></table></figure></p>
+<p>If we call the method <em>foo()</em> like showed below, we will have an error. This error basically tells us two things:</p>
+<ol>
+<li>the method <em>foo()</em> is an unbound method</li>
+<li><p>it must be called with an instance of the class<br>To explain it further, <em>foo()</em> is an unbound method, it should be bound with an instance of the class and this instance should be passed as the first argument of this method.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; MethodsExample.foo()</div><div class="line">Traceback (most recent call last):</div><div class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</div><div class="line">  TypeError: unbound method foo() must be called with MethodsExample instance as first argument (got nothing instead)</div></pre></td></tr></table></figure>
+<p>So let’s pass an instance!</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; MethodsExample.foo(MethodsExample(233))</div><div class="line">233</div></pre></td></tr></table></figure>
+<p>This time it works.</p>
+<p>In fact we don’t need to explicitly pass in an instance.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; MethodsExample(233).foo()</div><div class="line">233</div><div class="line">&gt;&gt;&gt; MethodsExample(233).foo</div><div class="line">&lt;bound method MethodsExample.foo of &lt;__main__.MethodsExample object at 0x7f14261e00d0&gt;&gt;</div></pre></td></tr></table></figure>
+<p>Python automatically binds all the methods from the class <em>MethodsExample</em> to any instance (e.g. MethodsExample(233)) of this class. So now <em>foo()</em> is a bound method.</p>
+</li>
+</ol>
+<h3 id="Static-methods"><a href="#Static-methods" class="headerlink" title="Static methods"></a>Static methods</h3><p>By adding a <em>@staticmethod</em> decorator to a method, we can turn the method into a static method.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; class MethodsExample(object):</div><div class="line">...     def __init__(self, var):</div><div class="line">...         self.var = var</div><div class="line">...     @staticmethod</div><div class="line">...     def static_foo(x):</div><div class="line">...         return x</div><div class="line">... </div><div class="line">&gt;&gt;&gt; MethodsExample.static_foo(233)</div><div class="line">233</div><div class="line">&gt;&gt;&gt; MethodsExample(666).static_foo(233)</div><div class="line">233</div></pre></td></tr></table></figure></p>
+<p>Like shown above, a static method belongs to a class but the method doesn’t need to be bound to the object at all. It behaves like a plain function except that you can call it from an instance or the class.</p>
+<p>So why static methods?</p>
+<ol>
+<li>Staticmethods are used to group functions which have some logical connection with a class to the class. If we have a module with several classes in it and <em>foo()</em> is only associated with one of them, then we can write <em>foo()</em> as a static method in that class.</li>
+<li>We can override the static method in a subclass</li>
+</ol>
+<h3 id="Class-methods"><a href="#Class-methods" class="headerlink" title="Class methods"></a>Class methods</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; class MethodsExample(object):</div><div class="line">...     var = 233</div><div class="line">...     @classmethod</div><div class="line">...     def class_foo(cls):</div><div class="line">...         return cls.var</div><div class="line">... </div><div class="line">&gt;&gt;&gt; MethodsExample.class_foo()</div><div class="line">233</div><div class="line">&gt;&gt;&gt; MethodsExample().class_foo()</div><div class="line">233</div></pre></td></tr></table></figure>
+<p>Like static methods, class methods are not bound to an object. But they are bound to a class. Whatever the way you use to access this method, it will always be bound to the class it is attached to, and its first argument will be the class itself. Class methods can also be overriden in a subclass. Class methods’ definition follows Sub class, not Parent class, via inheritance.</p>
+<h3 id="People-say…"><a href="#People-say…" class="headerlink" title="People say…"></a>People say…</h3><p>Some people say static methods are useless (or have limited use). Sometimes it’s even better to put them outside the class. And <a href="https://en.wikipedia.org/wiki/Guido_van_Rossum" target="_blank" rel="external">Guido van Rossum</a> said:</p>
+<blockquote>
+<p>We all know how limited static methods are. (They’re basically an accident — back in the Python 2.2 days when I was inventing new-style classes and descriptors, I meant to implement class methods but at first I didn’t understand them and accidentally implemented static methods first. Then it was too late to remove them and only provide class methods.</p>
+</blockquote>
 
       
     </div>
@@ -379,9 +387,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/deep-learning/" rel="tag"># deep learning</a>
-          
-            <a href="/tags/object-detection/" rel="tag"># object detection</a>
+            <a href="/tags/python/" rel="tag"># python</a>
           
         </div>
       
@@ -394,8 +400,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/19/My-first-post/" rel="next" title="My first post">
-                <i class="fa fa-chevron-left"></i> My first post
+              <a href="/2017/06/24/Reccurent-Rolling-Convolution-RRC/" rel="next" title="Reccurent Rolling Convolution (RRC)">
+                <i class="fa fa-chevron-left"></i> Reccurent Rolling Convolution (RRC)
               </a>
             
           </div>
@@ -403,10 +409,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/24/Reccurent-Rolling-Convolution-RRC/" rel="prev" title="Reccurent Rolling Convolution (RRC)">
-                Reccurent Rolling Convolution (RRC) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -553,7 +555,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Accuracy-vs-time"><span class="nav-number">1.</span> <span class="nav-text">Accuracy vs time</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-effect-of-the-feature-extractor"><span class="nav-number">2.</span> <span class="nav-text">The effect of the feature extractor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-effect-of-object-size"><span class="nav-number">3.</span> <span class="nav-text">The effect of object size</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-effect-of-image-size"><span class="nav-number">4.</span> <span class="nav-text">The effect of image size</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-effect-of-the-number-of-proposals"><span class="nav-number">5.</span> <span class="nav-text">The effect of the number of proposals</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#FLOPs-analysis"><span class="nav-number">6.</span> <span class="nav-text">FLOPs analysis</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Memory-analysis"><span class="nav-number">7.</span> <span class="nav-text">Memory analysis</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IOU-thresholds"><span class="nav-number">8.</span> <span class="nav-text">IOU thresholds</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bound"><span class="nav-number">1.</span> <span class="nav-text">Bound</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Static-methods"><span class="nav-number">2.</span> <span class="nav-text">Static methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Class-methods"><span class="nav-number">3.</span> <span class="nav-text">Class methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#People-say…"><span class="nav-number">4.</span> <span class="nav-text">People say…</span></a></li></ol></div>
             
 
           </div>
@@ -703,9 +705,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/06/22/detectors/';
-          this.page.identifier = '2017/06/22/detectors/';
-          this.page.title = 'Comparing CNN based object detectors';
+          this.page.url = 'http://yoursite.com/2017/06/25/Static-methods-and-class-methods-in-Python/';
+          this.page.identifier = '2017/06/25/Static-methods-and-class-methods-in-Python/';
+          this.page.title = 'Static methods and class methods in Python';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://dcsds1.disqus.com/embed.js';
