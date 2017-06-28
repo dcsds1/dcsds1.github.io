@@ -90,19 +90,17 @@
 
 
 
-<meta name="description" content="Python 2.x’s support for Unicode was a messy problem for me when I started learning Python. Today I read through the official tutorial and want to take note of it.  Note: In Python 3, there are some c">
+<meta name="description" content="os.path.abspath(path)No matter what you pass into os.path.abspath(), the path is seen as a relative path. It is relative to the directory from where you are executing your code. So the return value w">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python Unicode">
-<meta property="og:url" content="http://yoursite.com/2017/06/25/Python-Unicode/index.html">
+<meta property="og:title" content="Python os.path module examples">
+<meta property="og:url" content="http://yoursite.com/2017/06/27/Python-os-path-module-examples/index.html">
 <meta property="og:site_name" content="Changsong&#39;s Blog">
-<meta property="og:description" content="Python 2.x’s support for Unicode was a messy problem for me when I started learning Python. Today I read through the official tutorial and want to take note of it.  Note: In Python 3, there are some c">
-<meta property="og:image" content="https://snag.gy/iMQTrP.jpg">
-<meta property="og:updated_time" content="2017-06-25T15:51:52.000Z">
+<meta property="og:description" content="os.path.abspath(path)No matter what you pass into os.path.abspath(), the path is seen as a relative path. It is relative to the directory from where you are executing your code. So the return value w">
+<meta property="og:updated_time" content="2017-06-28T02:15:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python Unicode">
-<meta name="twitter:description" content="Python 2.x’s support for Unicode was a messy problem for me when I started learning Python. Today I read through the official tutorial and want to take note of it.  Note: In Python 3, there are some c">
-<meta name="twitter:image" content="https://snag.gy/iMQTrP.jpg">
+<meta name="twitter:title" content="Python os.path module examples">
+<meta name="twitter:description" content="os.path.abspath(path)No matter what you pass into os.path.abspath(), the path is seen as a relative path. It is relative to the directory from where you are executing your code. So the return value w">
 
 
 
@@ -130,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/06/25/Python-Unicode/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/06/27/Python-os-path-module-examples/"/>
 
 
 
 
 
-  <title>Python Unicode | Changsong's Blog</title>
+  <title>Python os.path module examples | Changsong's Blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -246,7 +244,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/25/Python-Unicode/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/27/Python-os-path-module-examples/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Changsong Dong">
@@ -263,7 +261,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python Unicode</h1>
+          <h1 class="post-title" itemprop="name headline">Python os.path module examples</h1>
         
 
         <div class="post-meta">
@@ -275,8 +273,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-25T10:50:31-05:00">
-                2017-06-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-27T21:14:42-05:00">
+                2017-06-27
               </time>
             
 
@@ -294,9 +292,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/06/25/Python-Unicode/#comments" itemprop="discussionUrl">
+                <a href="/2017/06/27/Python-os-path-module-examples/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/06/25/Python-Unicode/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/06/27/Python-os-path-module-examples/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -304,7 +302,7 @@
 
           
           
-             <span id="/2017/06/25/Python-Unicode/" class="leancloud_visitors" data-flag-title="Python Unicode">
+             <span id="/2017/06/27/Python-os-path-module-examples/" class="leancloud_visitors" data-flag-title="Python os.path module examples">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -332,19 +330,27 @@
       
 
       
-        <p>Python 2.x’s support for Unicode was a messy problem for me when I started learning Python. Today I read through the official tutorial and want to take note of it. </p>
-<p>Note: In Python 3, there are some changes. This post is only based on Python 2.<br><a id="more"></a></p>
-<h3 id="Brief-history"><a href="#Brief-history" class="headerlink" title="Brief history"></a>Brief history</h3><p>First, we need to understand that we are talking about using numbers to represent characters. Ok, now, history starts.</p>
-<p><strong>In 1968</strong>, ASCII is invented. It was an American-developed standard. Numeric values from 0 to 127 are assigned to various characters. For example, the lowercase letter ‘a’ is assigned 97 as its code value. However, ASCII is not enough to represent other languages’ characters like French characters.</p>
-<p>So <strong>in 1980s</strong>, people started develop the Unicode Standard. Unicode started out using 16-bit characters instead of 8-bit characters.</p>
-<h3 id="Encodings-and-decodings-in-Python-2"><a href="#Encodings-and-decodings-in-Python-2" class="headerlink" title="Encodings and decodings in Python 2"></a>Encodings and decodings in Python 2</h3><p>The Unicode standard describes how characters are represented by code points. For example, ‘a’ is 0061. 0061 is the code point. In the standard, a code point is written using the notation U+12ca to mean the character with value 0x12ca (4810 decimal). Here is a <a href="http://inamidst.com/stuff/unidata/" target="_blank" rel="external">Unicode codepoint chart</a>.</p>
-<p>The Unicode string needs to be represented as a set of bytes (meaning, values from 0–255) in memory. The rules for translating a Unicode string into a sequence of bytes are called an encoding.</p>
-<p>In Python 2.x, a Python string is a sequence of bytes. And Python byte strings (str type) have an encoding, Unicode does not. So you can convert a Unicode string to a Python byte string using <em>.encode(encoding)</em>, and you can convert a byte string to a Unicode string using <em>.decode(encoding)</em>. A code example is given below.</p>
-<p><img src="https://snag.gy/iMQTrP.jpg" alt=""></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; &apos;abc&apos;.decode(&apos;utf-8&apos;)  # str to unicode</div><div class="line">u&apos;abc&apos;</div><div class="line">&gt;&gt;&gt; u&apos;abc&apos;.encode(&apos;utf-8&apos;) # unicode to str</div><div class="line">&apos;abc&apos;</div></pre></td></tr></table></figure>
-<h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h4><ol>
-<li><a href="https://docs.python.org/2/howto/unicode.html" target="_blank" rel="external">Unicode HOWTO</a></li>
-<li>Some very good questions and answers from stackoverflow:<br><a href="https://stackoverflow.com/questions/10288016/usage-of-unicode-and-encode-functions-in-python?noredirect=1&amp;lq=1" target="_blank" rel="external">https://stackoverflow.com/questions/10288016/usage-of-unicode-and-encode-functions-in-python?noredirect=1&amp;lq=1</a><br><a href="https://stackoverflow.com/questions/368805/python-unicodedecodeerror-am-i-misunderstanding-encode?noredirect=1&amp;lq=1" target="_blank" rel="external">https://stackoverflow.com/questions/368805/python-unicodedecodeerror-am-i-misunderstanding-encode?noredirect=1&amp;lq=1</a><br><a href="https://stackoverflow.com/questions/447107/what-is-the-difference-between-encode-decode" target="_blank" rel="external">https://stackoverflow.com/questions/447107/what-is-the-difference-between-encode-decode</a></li>
+        <ol>
+<li><p>os.path.abspath(<em>path</em>)<br>No matter what you pass into os.path.abspath(), the <em>path</em> is seen as a relative path. It is relative to the directory from where you are executing your code. So the return value will concatenate your current directory with <em>path</em>.</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import os.path</div><div class="line">&gt;&gt;&gt; os.getcwd()</div><div class="line">&apos;/home/int3&apos;</div><div class="line">&gt;&gt;&gt; os.path.abspath(&apos;file.txt&apos;)</div><div class="line">&apos;/home/int3/file.txt&apos;</div></pre></td></tr></table></figure>
+</li>
+<li><p>os.path.split(<em>path</em>)<br>This will split the <em>path</em> into a pair, <code>(head, tail)</code> where tail is the file name and head is the directory name.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; path = &apos;/path/to/file.txt&apos;</div><div class="line">&gt;&gt;&gt; os.path.split(path)</div><div class="line">(&apos;/path/to&apos;, &apos;file.txt&apos;)</div><div class="line">&gt;&gt;&gt; os.path.split(&apos;/path/to/&apos;)</div><div class="line">(&apos;/path/to&apos;, &apos;&apos;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>os.path.dirname(<em>path</em>)<br>Return the directory name. It’s in fact the <code>head</code> in the <code>(head, tail)</code> pair.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; os.path.dirname(path)</div><div class="line">&apos;/path/to&apos;</div><div class="line">&gt;&gt;&gt; os.path.dirname(&apos;/path/to/&apos;)</div><div class="line">&apos;/path/to&apos;</div></pre></td></tr></table></figure>
+</li>
+<li><p>os.path.basename(<em>path</em>)<br>Return the file name. It <em>path</em> ends with <code>\</code> or <code>/</code>, the return value will be <code>&#39;&#39;</code>. It’s in fact the <code>tail</code> in the <code>(head, tail)</code> pair.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; os.path.basename(path)</div><div class="line">&apos;file.txt&apos;</div><div class="line">&gt;&gt;&gt; os.path.basename(&apos;/path/to/&apos;)</div><div class="line">&apos;&apos;</div></pre></td></tr></table></figure>
+</li>
+<li><p>os.path.exists(<em>path</em>)<br>If the <em>path</em> exists, return <figure class="highlight plain"><figcaption><span>otherwise, return ```False``` .</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line">&gt;&gt;&gt; os.path.exists(path)</div><div class="line">False</div><div class="line">&gt;&gt;&gt; os.path.exists(&apos;/home/int3/&apos;)</div><div class="line">True</div></pre></td></tr></table></figure></p>
+</li>
+<li><p>os.path.isfile(<em>path</em>)<br>If <em>path</em> is an existed file, return <code>True</code>. Otherwise, return <code>False</code>.</p>
+</li>
+<li><p>os.path.join(<em>path</em>)<br>Join one or more path components intelligently. If a component is an absolute path, all previous components are thrown away and joining continues from the absolute path component.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; os.path.join(&apos;/home/&apos;, &apos;file1.txt&apos;, &apos;file2.jpg&apos;)</div><div class="line">&apos;/home/file1.txt/file2.jpg&apos;</div><div class="line">&gt;&gt;&gt; os.path.join(&apos;/home/&apos;, &apos;/usr/&apos;, &apos;file1.txt&apos;, &apos;file2.jpg&apos;)</div><div class="line">&apos;/usr/file1.txt/file2.jpg&apos;</div></pre></td></tr></table></figure>
+</li>
 </ol>
 
       
@@ -388,8 +394,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/25/Static-methods-and-class-methods-in-Python/" rel="next" title="Static methods and class methods in Python">
-                <i class="fa fa-chevron-left"></i> Static methods and class methods in Python
+              <a href="/2017/06/25/Python-Unicode/" rel="next" title="Python Unicode">
+                <i class="fa fa-chevron-left"></i> Python Unicode
               </a>
             
           </div>
@@ -397,10 +403,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/27/Python-os-path-module-examples/" rel="prev" title="Python os.path module examples">
-                Python os.path module examples <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -454,17 +456,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://snag.gy/AoQFRM.jpg"
@@ -537,22 +530,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Brief-history"><span class="nav-number">1.</span> <span class="nav-text">Brief history</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Encodings-and-decodings-in-Python-2"><span class="nav-number">2.</span> <span class="nav-text">Encodings and decodings in Python 2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Reference"><span class="nav-number">2.1.</span> <span class="nav-text">Reference:</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -697,9 +674,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/06/25/Python-Unicode/';
-          this.page.identifier = '2017/06/25/Python-Unicode/';
-          this.page.title = 'Python Unicode';
+          this.page.url = 'http://yoursite.com/2017/06/27/Python-os-path-module-examples/';
+          this.page.identifier = '2017/06/27/Python-os-path-module-examples/';
+          this.page.title = 'Python os.path module examples';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://dcsds1.disqus.com/embed.js';
