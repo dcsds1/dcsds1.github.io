@@ -241,6 +241,148 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/06/Python-random-module-why-we-need-to-set-seed/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Changsong Dong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://snag.gy/AoQFRM.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Changsong's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/06/Python-random-module-why-we-need-to-set-seed/" itemprop="url">Python random module: why we need to set seed?</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-06T20:11:17-05:00">
+                2017-07-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/06/Python-random-module-why-we-need-to-set-seed/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/06/Python-random-module-why-we-need-to-set-seed/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/07/06/Python-random-module-why-we-need-to-set-seed/" class="leancloud_visitors" data-flag-title="Python random module: why we need to set seed?">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>I was googling what <figure class="highlight plain"><figcaption><span>does and found that the *random* module in Python in fact implements pseudo-random number generators.</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;! -- more -- &gt;</div><div class="line">We need to set a **seed** because the pseudo-random number generators work by performing some operation on a value. Different **seed** will generate different number sequences. In the example below, if we set the **seed** to be 123, we can find that the generated number sequences are same! That&apos;s why we call it &quot;pseudo-random&quot;.</div></pre></td></tr></table></figure></p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>import random<br>random.seed(123) # We set a seed first<br>random.random()<br>0.052363598850944326<br>random.random()<br>0.08718667752263232<br>random.random()<br>0.4072417636703983<br>random.seed(23) # We set a different seed<br>random.random()<br>0.9248652516259452<br>random.random()<br>0.9486057779931771<br>random.seed(123) # If we set a same seed again, we will generate a same sequence!<br>random.random()<br>0.052363598850944326<br>random.random()<br>0.08718667752263232<br>random.seed(23)<br>random.random()<br>0.9248652516259452<br>random.random()<br>0.9486057779931771<br>```</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Reference:<br><a href="https://stackoverflow.com/questions/22639587/random-seed-what-does-it-do" target="_blank" rel="external">https://stackoverflow.com/questions/22639587/random-seed-what-does-it-do</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/27/Python-os-path-module-examples/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1103,7 +1245,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
