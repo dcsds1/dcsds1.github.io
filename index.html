@@ -330,18 +330,14 @@
 
       
         
-          
-            <p>I was googling what <figure class="highlight plain"><figcaption><span>does and found that the *random* module in Python in fact implements pseudo-random number generators.</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;!-- more --&gt;</div><div class="line"></div><div class="line">We need to set a **seed** because the pseudo-random number generators work by performing some operation on a value. Different **seed** will generate different number sequences. In the example below, if we set the **seed** to be 123, we can find that the generated number sequences are same! That&apos;s why we call it &quot;pseudo-random&quot;.</div></pre></td></tr></table></figure></p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>import random<br>random.seed(123) # We set a seed first<br>random.random()<br>0.052363598850944326<br>random.random()<br>0.08718667752263232<br>random.random()<br>0.4072417636703983<br>random.seed(23) # We set a different seed<br>random.random()<br>0.9248652516259452<br>random.random()<br>0.9486057779931771<br>random.seed(123) # If we set a same seed again, we will generate a same sequence!<br>random.random()<br>0.052363598850944326<br>random.random()<br>0.08718667752263232<br>random.seed(23)<br>random.random()<br>0.9248652516259452<br>random.random()<br>0.9486057779931771<br>```</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>Reference:<br><a href="https://stackoverflow.com/questions/22639587/random-seed-what-does-it-do" target="_blank" rel="external">https://stackoverflow.com/questions/22639587/random-seed-what-does-it-do</a></p>
-
-          
+          <p>I was googling what random.seed() does and found that the <em>random</em> module in Python in fact implements pseudo-random number generators.</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/06/Python-random-module-why-we-need-to-set-seed/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="I was googling what does and found that the *random* module in Python in fact implements pseudo-random number generators.1234&amp;lt;!-- more --&amp;gt;We need to set a **seed** because the pseudo-random numb">
+<meta name="description" content="I was googling what random.seed() does and found that the random module in Python in fact implements pseudo-random number generators.">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python random module: why we need to set seed?">
 <meta property="og:url" content="http://yoursite.com/2017/07/06/Python-random-module-why-we-need-to-set-seed/index.html">
 <meta property="og:site_name" content="Changsong&#39;s Blog">
-<meta property="og:description" content="I was googling what does and found that the *random* module in Python in fact implements pseudo-random number generators.1234&amp;lt;!-- more --&amp;gt;We need to set a **seed** because the pseudo-random numb">
-<meta property="og:updated_time" content="2017-07-07T01:26:52.000Z">
+<meta property="og:description" content="I was googling what random.seed() does and found that the random module in Python in fact implements pseudo-random number generators.">
+<meta property="og:updated_time" content="2017-07-07T01:29:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python random module: why we need to set seed?">
-<meta name="twitter:description" content="I was googling what does and found that the *random* module in Python in fact implements pseudo-random number generators.1234&amp;lt;!-- more --&amp;gt;We need to set a **seed** because the pseudo-random numb">
+<meta name="twitter:description" content="I was googling what random.seed() does and found that the random module in Python in fact implements pseudo-random number generators.">
 
 
 
@@ -330,14 +330,10 @@
       
 
       
-        <p>I was googling what <figure class="highlight plain"><figcaption><span>does and found that the *random* module in Python in fact implements pseudo-random number generators.</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;!-- more --&gt;</div><div class="line"></div><div class="line">We need to set a **seed** because the pseudo-random number generators work by performing some operation on a value. Different **seed** will generate different number sequences. In the example below, if we set the **seed** to be 123, we can find that the generated number sequences are same! That&apos;s why we call it &quot;pseudo-random&quot;.</div></pre></td></tr></table></figure></p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>import random<br>random.seed(123) # We set a seed first<br>random.random()<br>0.052363598850944326<br>random.random()<br>0.08718667752263232<br>random.random()<br>0.4072417636703983<br>random.seed(23) # We set a different seed<br>random.random()<br>0.9248652516259452<br>random.random()<br>0.9486057779931771<br>random.seed(123) # If we set a same seed again, we will generate a same sequence!<br>random.random()<br>0.052363598850944326<br>random.random()<br>0.08718667752263232<br>random.seed(23)<br>random.random()<br>0.9248652516259452<br>random.random()<br>0.9486057779931771<br>```</p>
-</blockquote>
-</blockquote>
-</blockquote>
+        <p>I was googling what random.seed() does and found that the <em>random</em> module in Python in fact implements pseudo-random number generators.</p>
+<a id="more"></a>
+<p>We need to set a <strong>seed</strong> because the pseudo-random number generators work by performing some operation on a value. Different <strong>seed</strong> will generate different number sequences. In the example below, if we set the <strong>seed</strong> to be 123, we can find that the generated number sequences are same! That’s why we call it “pseudo-random”.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import random</div><div class="line">&gt;&gt;&gt; random.seed(123) # We set a seed first</div><div class="line">&gt;&gt;&gt; random.random()</div><div class="line">0.052363598850944326</div><div class="line">&gt;&gt;&gt; random.random()</div><div class="line">0.08718667752263232</div><div class="line">&gt;&gt;&gt; random.random()</div><div class="line">0.4072417636703983</div><div class="line">&gt;&gt;&gt; random.seed(23) # We set a different seed</div><div class="line">&gt;&gt;&gt; random.random()</div><div class="line">0.9248652516259452</div><div class="line">&gt;&gt;&gt; random.random()</div><div class="line">0.9486057779931771</div><div class="line">&gt;&gt;&gt; random.seed(123) # If we set a same seed again, we will generate a same sequence!</div><div class="line">&gt;&gt;&gt; random.random()</div><div class="line">0.052363598850944326</div><div class="line">&gt;&gt;&gt; random.random()</div><div class="line">0.08718667752263232</div><div class="line">&gt;&gt;&gt; random.seed(23)</div><div class="line">&gt;&gt;&gt; random.random()</div><div class="line">0.9248652516259452</div><div class="line">&gt;&gt;&gt; random.random()</div><div class="line">0.9486057779931771</div></pre></td></tr></table></figure>
 <p>Reference:<br><a href="https://stackoverflow.com/questions/22639587/random-seed-what-does-it-do" target="_blank" rel="external">https://stackoverflow.com/questions/22639587/random-seed-what-does-it-do</a></p>
 
       
