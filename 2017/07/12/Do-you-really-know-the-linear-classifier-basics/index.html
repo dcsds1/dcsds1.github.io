@@ -98,7 +98,7 @@
 <meta property="og:site_name" content="Changsong&#39;s Blog">
 <meta property="og:description" content="MathJax.Hub.Config({   tex2jax: {inlineMath: [[&apos;$&apos;,&apos;$&apos;], [&apos;\\(&apos;,&apos;\\)&apos;]]} });      Let’s talk about a simple linear classifier: $$f(x_i, W, b) = Wx_i + b$$  What does one row of the weight matrix repr">
 <meta property="og:image" content="https://qph.ec.quoracdn.net/main-qimg-c0bb76e8e57e9a33170c45265eadb213.webp">
-<meta property="og:updated_time" content="2017-07-13T01:40:49.000Z">
+<meta property="og:updated_time" content="2017-07-13T01:46:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Do you really know the linear classifier basics?">
 <meta name="twitter:description" content="MathJax.Hub.Config({   tex2jax: {inlineMath: [[&apos;$&apos;,&apos;$&apos;], [&apos;\\(&apos;,&apos;\\)&apos;]]} });      Let’s talk about a simple linear classifier: $$f(x_i, W, b) = Wx_i + b$$  What does one row of the weight matrix repr">
@@ -349,7 +349,7 @@ MathJax.Hub.Config({
 </li>
 <li><p>If the (binary) linear classifier is a line in a 2d plane, what does the weight matrix and bias control?<br>If we change the weight matrix the line will rotate in the 2d plane. If we change the bias, the line will translate in the 2d plane. Weights and bias are all learnable.</p>
 </li>
-<li><p>Why we need the bias term?<br>Without the bias terms, plugging in \x_i=0\ would always give score of zero regardless of the weights, so that all lines would be forced to cross the origin.<br><img src="https://qph.ec.quoracdn.net/main-qimg-c0bb76e8e57e9a33170c45265eadb213.webp" alt=""></p>
+<li><p>Why we need the bias term?<br>Without the bias terms, plugging in $x_i=0$ would always give score of zero regardless of the weights, so that all lines would be forced to cross the origin.<br><img src="https://qph.ec.quoracdn.net/main-qimg-c0bb76e8e57e9a33170c45265eadb213.webp" alt=""></p>
 </li>
 <li><p>What data preprocessing you usually do before training the classifier?<br>(1) Center the data by subtracting the dataset mean from every feature (e.g. normalize the images by subtracting the mean per channel calculated over all images).<br>(2) Normalize (scale) the data so that its values range from [-1, 1].</p>
 </li>
