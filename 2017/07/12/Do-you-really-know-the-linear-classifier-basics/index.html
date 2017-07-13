@@ -98,7 +98,7 @@
 <meta property="og:site_name" content="Changsong&#39;s Blog">
 <meta property="og:description" content="MathJax.Hub.Config({   tex2jax: {inlineMath: [[&apos;$&apos;,&apos;$&apos;], [&apos;\\(&apos;,&apos;\\)&apos;]]} });      Let’s talk about a simple linear classifier: $$f(x_i, W, b) = Wx_i + b$$  What does one row of the weight matrix repr">
 <meta property="og:image" content="https://qph.ec.quoracdn.net/main-qimg-c0bb76e8e57e9a33170c45265eadb213.webp">
-<meta property="og:updated_time" content="2017-07-13T01:33:24.000Z">
+<meta property="og:updated_time" content="2017-07-13T01:40:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Do you really know the linear classifier basics?">
 <meta name="twitter:description" content="MathJax.Hub.Config({   tex2jax: {inlineMath: [[&apos;$&apos;,&apos;$&apos;], [&apos;\\(&apos;,&apos;\\)&apos;]]} });      Let’s talk about a simple linear classifier: $$f(x_i, W, b) = Wx_i + b$$  What does one row of the weight matrix repr">
@@ -349,13 +349,13 @@ MathJax.Hub.Config({
 </li>
 <li><p>If the (binary) linear classifier is a line in a 2d plane, what does the weight matrix and bias control?<br>If we change the weight matrix the line will rotate in the 2d plane. If we change the bias, the line will translate in the 2d plane. Weights and bias are all learnable.</p>
 </li>
-<li><p>Why we need the bias term?<br>Without the bias terms, plugging in [x_i=0] would always give score of zero regardless of the weights, so that all lines would be forced to cross the origin.<br><img src="https://qph.ec.quoracdn.net/main-qimg-c0bb76e8e57e9a33170c45265eadb213.webp" alt=""></p>
+<li><p>Why we need the bias term?<br>Without the bias terms, plugging in \x_i=0\ would always give score of zero regardless of the weights, so that all lines would be forced to cross the origin.<br><img src="https://qph.ec.quoracdn.net/main-qimg-c0bb76e8e57e9a33170c45265eadb213.webp" alt=""></p>
 </li>
 <li><p>What data preprocessing you usually do before training the classifier?<br>(1) Center the data by subtracting the dataset mean from every feature (e.g. normalize the images by subtracting the mean per channel calculated over all images).<br>(2) Normalize (scale) the data so that its values range from [-1, 1].</p>
 </li>
 <li><p>Why we want to penalize large weights using, for example,  L2 norm?<br>The most appealing property is that penalizing large weights tends to improve generalization, because it means that no input dimension can have a very large influence on the scores all by itself. Since the L2 penalty prefers smaller and more diffuse weight vectors, the final classifier is encouraged to take into account all input dimensions to small amounts rather than a few input dimensions and very strongly.</p>
 </li>
-<li><p>What is the form of a cross-entropy loss?<br>\[L<em>i = -\log\left(\frac{e^{f</em>{y_i}}}{ \sum_j e^{f_j} }\]</p>
+<li><p>What is the form of a cross-entropy loss?<br>$$L<em>i = -\log\left(\frac{e^{f</em>{y_i}}}{ \sum_j e^{f_j} }$$</p>
 </li>
 <li><p>What problem you might encounter when coding a Softmax function?<br>Overflow or underflow. the intermediate terms may be very large due to the exponentials. Dividing large numbers can be numerically unstable, so it is important to use a normalization trick. </p>
 </li>
