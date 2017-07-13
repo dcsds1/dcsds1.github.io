@@ -330,31 +330,16 @@
 
       
         
-          
-            <p>A simple linear classifier: $$f(x_i, W, b) = Wx_i + b$$</p>
+          <p>Let’s talk about a simple linear classifier: $f(x_i, W, b) = Wx_i + b$</p>
 <ol>
-<li><p>What does one row of the weight matrix represent?<br>Each row of the weight matrix is a classifier for one certain class. Or we can say each row is a template. In this way, linear classifiers can be interpreted as template matching.</p>
-</li>
-<li><p>If the (binary) linear classifier is a line in a 2d plane, what does the weight matrix and bias control?<br>If we change the weight matrix the line will rotate in the 2d plane. If we change the bias, the line will translate in the 2d plane. Weights and bias are all learnable.</p>
-</li>
-<li><p>Why we need the bias term?<br>Without the bias terms, plugging in \[x_i=0\] would always give score of zero regardless of the weights, so that all lines would be forced to cross the origin.<br><img src="https://qph.ec.quoracdn.net/main-qimg-c0bb76e8e57e9a33170c45265eadb213.webp" alt=""></p>
-</li>
-<li><p>What data preprocessing you usually do before training the classifier?<br>(1) Center the data by subtracting the dataset mean from every feature (e.g. normalize the images by subtracting the mean per channel calculated over all images).<br>(2) Normalize (scale) the data so that its values range from [-1, 1].</p>
-</li>
-<li><p>Why we want to penalize large weights using, for example,  L2 norm?<br>The most appealing property is that penalizing large weights tends to improve generalization, because it means that no input dimension can have a very large influence on the scores all by itself. Since the L2 penalty prefers smaller and more diffuse weight vectors, the final classifier is encouraged to take into account all input dimensions to small amounts rather than a few input dimensions and very strongly.</p>
-</li>
-<li><p>What is the form of a cross-entropy loss?<br>\[L<em>i = -\log\left(\frac{e^{f</em>{y_i}}}{ \sum_j e^{f_j} }\]</p>
-</li>
-<li><p>What problem you might encounter when coding a Softmax function?<br>Overflow or underflow. the intermediate terms may be very large due to the exponentials. Dividing large numbers can be numerically unstable, so it is important to use a normalization trick. </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import numpy as np</div><div class="line">&gt;&gt;&gt; f = np.array([123, 456, 789]) </div><div class="line">&gt;&gt;&gt; p = np.exp(f) / np.sum(np.exp(f))</div><div class="line">__main__:1: RuntimeWarning: overflow encountered in exp</div><div class="line">__main__:1: RuntimeWarning: invalid value encountered in divide</div><div class="line">&gt;&gt;&gt; np.exp(f)</div><div class="line">array([  2.61951732e+053,   1.09215367e+198,               inf])</div><div class="line">&gt;&gt;&gt; np.sum(np.exp(f))</div><div class="line">inf</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>We can solve this problem by multiplying the top and bottom of the fraction by a constant <em>C</em> and push it into the sum. A common choice for <em>C</em> is to set $$logC = -max_j f_j$$<br>This simply states that we should shift the values inside the vector <em>f</em> so that the highest value is zero.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; f -= np.max(f)</div><div class="line">&gt;&gt;&gt; p = np.exp(f) / np.sum(np.exp(f))</div><div class="line">&gt;&gt;&gt; p</div><div class="line">array([  5.75274406e-290,   2.39848787e-145,   1.00000000e+000])</div></pre></td></tr></table></figure></p>
-<ol>
-<li>Final challenge: can you write down back propagation of a 2-layer neral network.</li>
-</ol>
-
-          
+<li><p>What does one row of the weight matrix represent?</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/12/Do-you-really-know-the-linear-classifier-basics/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

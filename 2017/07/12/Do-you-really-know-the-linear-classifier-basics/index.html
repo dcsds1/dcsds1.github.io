@@ -90,18 +90,18 @@
 
 
 
-<meta name="description" content="A simple linear classifier: $$f(x_i, W, b) = Wx_i + b$$  What does one row of the weight matrix represent?Each row of the weight matrix is a classifier for one certain class. Or we can say each row is">
+<meta name="description" content="Let’s talk about a simple linear classifier: $f(x_i, W, b) = Wx_i + b$  What does one row of the weight matrix represent?">
 <meta name="keywords" content="machine learning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Do you really know the linear classifier basics?">
 <meta property="og:url" content="http://yoursite.com/2017/07/12/Do-you-really-know-the-linear-classifier-basics/index.html">
 <meta property="og:site_name" content="Changsong&#39;s Blog">
-<meta property="og:description" content="A simple linear classifier: $$f(x_i, W, b) = Wx_i + b$$  What does one row of the weight matrix represent?Each row of the weight matrix is a classifier for one certain class. Or we can say each row is">
+<meta property="og:description" content="Let’s talk about a simple linear classifier: $f(x_i, W, b) = Wx_i + b$  What does one row of the weight matrix represent?">
 <meta property="og:image" content="https://qph.ec.quoracdn.net/main-qimg-c0bb76e8e57e9a33170c45265eadb213.webp">
-<meta property="og:updated_time" content="2017-07-13T00:54:30.000Z">
+<meta property="og:updated_time" content="2017-07-13T01:09:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Do you really know the linear classifier basics?">
-<meta name="twitter:description" content="A simple linear classifier: $$f(x_i, W, b) = Wx_i + b$$  What does one row of the weight matrix represent?Each row of the weight matrix is a classifier for one certain class. Or we can say each row is">
+<meta name="twitter:description" content="Let’s talk about a simple linear classifier: $f(x_i, W, b) = Wx_i + b$  What does one row of the weight matrix represent?">
 <meta name="twitter:image" content="https://qph.ec.quoracdn.net/main-qimg-c0bb76e8e57e9a33170c45265eadb213.webp">
 
 
@@ -332,13 +332,15 @@
       
 
       
-        <p>A simple linear classifier: $$f(x_i, W, b) = Wx_i + b$$</p>
+        <p>Let’s talk about a simple linear classifier: $f(x_i, W, b) = Wx_i + b$</p>
 <ol>
-<li><p>What does one row of the weight matrix represent?<br>Each row of the weight matrix is a classifier for one certain class. Or we can say each row is a template. In this way, linear classifiers can be interpreted as template matching.</p>
+<li><p>What does one row of the weight matrix represent?</p>
+<a id="more"></a>
+<p>Each row of the weight matrix is a classifier for one certain class. Or we can say each row is a template. In this way, linear classifiers can be interpreted as template matching.</p>
 </li>
 <li><p>If the (binary) linear classifier is a line in a 2d plane, what does the weight matrix and bias control?<br>If we change the weight matrix the line will rotate in the 2d plane. If we change the bias, the line will translate in the 2d plane. Weights and bias are all learnable.</p>
 </li>
-<li><p>Why we need the bias term?<br>Without the bias terms, plugging in \[x_i=0\] would always give score of zero regardless of the weights, so that all lines would be forced to cross the origin.<br><img src="https://qph.ec.quoracdn.net/main-qimg-c0bb76e8e57e9a33170c45265eadb213.webp" alt=""></p>
+<li><p>Why we need the bias term?<br>Without the bias terms, plugging in [x_i=0] would always give score of zero regardless of the weights, so that all lines would be forced to cross the origin.<br><img src="https://qph.ec.quoracdn.net/main-qimg-c0bb76e8e57e9a33170c45265eadb213.webp" alt=""></p>
 </li>
 <li><p>What data preprocessing you usually do before training the classifier?<br>(1) Center the data by subtracting the dataset mean from every feature (e.g. normalize the images by subtracting the mean per channel calculated over all images).<br>(2) Normalize (scale) the data so that its values range from [-1, 1].</p>
 </li>
