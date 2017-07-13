@@ -90,18 +90,18 @@
 
 
 
-<meta name="description" content="Let’s talk about a simple linear classifier: $f(x_i, W, b) = Wx_i + b$  What does one row of the weight matrix represent?">
+<meta name="description" content="MathJax.Hub.Config({   tex2jax: {inlineMath: [[&apos;$&apos;,&apos;$&apos;], [&apos;\\(&apos;,&apos;\\)&apos;]]} });   Let’s talk about a simple linear classifier: $$f(x_i, W, b) = Wx_i + b$$  What does one row of the weight matrix represe">
 <meta name="keywords" content="machine learning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Do you really know the linear classifier basics?">
 <meta property="og:url" content="http://yoursite.com/2017/07/12/Do-you-really-know-the-linear-classifier-basics/index.html">
 <meta property="og:site_name" content="Changsong&#39;s Blog">
-<meta property="og:description" content="Let’s talk about a simple linear classifier: $f(x_i, W, b) = Wx_i + b$  What does one row of the weight matrix represent?">
+<meta property="og:description" content="MathJax.Hub.Config({   tex2jax: {inlineMath: [[&apos;$&apos;,&apos;$&apos;], [&apos;\\(&apos;,&apos;\\)&apos;]]} });   Let’s talk about a simple linear classifier: $$f(x_i, W, b) = Wx_i + b$$  What does one row of the weight matrix represe">
 <meta property="og:image" content="https://qph.ec.quoracdn.net/main-qimg-c0bb76e8e57e9a33170c45265eadb213.webp">
-<meta property="og:updated_time" content="2017-07-13T01:09:42.000Z">
+<meta property="og:updated_time" content="2017-07-13T01:25:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Do you really know the linear classifier basics?">
-<meta name="twitter:description" content="Let’s talk about a simple linear classifier: $f(x_i, W, b) = Wx_i + b$  What does one row of the weight matrix represent?">
+<meta name="twitter:description" content="MathJax.Hub.Config({   tex2jax: {inlineMath: [[&apos;$&apos;,&apos;$&apos;], [&apos;\\(&apos;,&apos;\\)&apos;]]} });   Let’s talk about a simple linear classifier: $$f(x_i, W, b) = Wx_i + b$$  What does one row of the weight matrix represe">
 <meta name="twitter:image" content="https://qph.ec.quoracdn.net/main-qimg-c0bb76e8e57e9a33170c45265eadb213.webp">
 
 
@@ -332,7 +332,13 @@
       
 
       
-        <p>Let’s talk about a simple linear classifier: $f(x_i, W, b) = Wx_i + b$</p>
+        <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+
+<p>Let’s talk about a simple linear classifier: $$f(x_i, W, b) = Wx_i + b$$</p>
 <ol>
 <li><p>What does one row of the weight matrix represent?</p>
 <a id="more"></a>
@@ -349,10 +355,11 @@
 <li><p>What is the form of a cross-entropy loss?<br>\[L<em>i = -\log\left(\frac{e^{f</em>{y_i}}}{ \sum_j e^{f_j} }\]</p>
 </li>
 <li><p>What problem you might encounter when coding a Softmax function?<br>Overflow or underflow. the intermediate terms may be very large due to the exponentials. Dividing large numbers can be numerically unstable, so it is important to use a normalization trick. </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import numpy as np</div><div class="line">&gt;&gt;&gt; f = np.array([123, 456, 789]) </div><div class="line">&gt;&gt;&gt; p = np.exp(f) / np.sum(np.exp(f))</div><div class="line">__main__:1: RuntimeWarning: overflow encountered in exp</div><div class="line">__main__:1: RuntimeWarning: invalid value encountered in divide</div><div class="line">&gt;&gt;&gt; np.exp(f)</div><div class="line">array([  2.61951732e+053,   1.09215367e+198,               inf])</div><div class="line">&gt;&gt;&gt; np.sum(np.exp(f))</div><div class="line">inf</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>We can solve this problem by multiplying the top and bottom of the fraction by a constant <em>C</em> and push it into the sum. A common choice for <em>C</em> is to set $$logC = -max_j f_j$$<br>This simply states that we should shift the values inside the vector <em>f</em> so that the highest value is zero.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; f -= np.max(f)</div><div class="line">&gt;&gt;&gt; p = np.exp(f) / np.sum(np.exp(f))</div><div class="line">&gt;&gt;&gt; p</div><div class="line">array([  5.75274406e-290,   2.39848787e-145,   1.00000000e+000])</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import numpy as np</div><div class="line">&gt;&gt;&gt; f = np.array([123, 456, 789]) </div><div class="line">&gt;&gt;&gt; p = np.exp(f) / np.sum(np.exp(f))</div><div class="line">__main__:1: RuntimeWarning: overflow encountered in exp</div><div class="line">__main__:1: RuntimeWarning: invalid value encountered in divide</div><div class="line">&gt;&gt;&gt; np.exp(f)</div><div class="line">array([  2.61951732e+053,   1.09215367e+198,               inf])</div><div class="line">&gt;&gt;&gt; np.sum(np.exp(f))</div><div class="line">inf</div></pre></td></tr></table></figure>
+<p>We can solve this problem by multiplying the top and bottom of the fraction by a constant <em>C</em> and push it into the sum. A common choice for <em>C</em> is to set $$logC = -max_j f_j$$<br>This simply states that we should shift the values inside the vector <em>f</em> so that the highest value is zero.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; f -= np.max(f)</div><div class="line">&gt;&gt;&gt; p = np.exp(f) / np.sum(np.exp(f))</div><div class="line">&gt;&gt;&gt; p</div><div class="line">array([  5.75274406e-290,   2.39848787e-145,   1.00000000e+000])</div></pre></td></tr></table></figure>
 <ol>
 <li>Final challenge: can you write down back propagation of a 2-layer neral network.</li>
 </ol>
