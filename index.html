@@ -330,8 +330,7 @@
 
       
         
-          
-            <script type="text/x-mathjax-config">
+          <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
 });
@@ -341,22 +340,14 @@ MathJax.Hub.Config({
 </script>
 
 <ol>
-<li><p>What is the change from ordinary neural network to convolutional neural network?<br>&lt;!—-more—-&gt;<br>ConvNet architectures make the explicit assumption that the inputs are images, which allows us to encode certain properties into the architecture. These then make the forward function more efficient to implement and vastly reduce the amount of parameters in the network.</p>
-</li>
-<li><p>Which layers have parameters?<br>CONV/FC do, RELU/POOL don’t.</p>
-</li>
-<li><p>Which layers have additional hyperparameters?<br>CONV/FC/POOL do, RELU doesn’t.</p>
-</li>
-<li><p>Why sometimes zero-padding?<br>The nice feature of zero padding is that it will allow us to control the spatial size of the output volumes (most commonly we will use it to exactly preserve the spatial size of the input volume so the input and output width and height are the same).</p>
-</li>
-<li><p>How to compute the output volume as a function of the input volume size (<em>W</em>), the receptive field size of the Conv Layer neurons (<em>F</em>), the stride with which they are applied (<em>S</em>), and the amount of zero padding used (<em>P</em>) on the border.<br>The formula is: $$\frac{W-F+2P}{S} + 1$$</p>
-</li>
-<li><p>What hyperparameters the convolutional layer has?<br>Number of filters, their spatial extent (kernel size), the stride, the amount of zero padding.</p>
-</li>
-</ol>
-<p>Final challenge: can you code a convolutional layer?</p>
-
-          
+<li><p>What is the change from ordinary neural network to convolutional neural network?</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/20/Do-you-really-know-CNN-basics/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
