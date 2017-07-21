@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="deep learning," />
+  <meta name="keywords" content="Python," />
 
 
 
@@ -90,20 +90,17 @@
 
 
 
-<meta name="description" content="ResNeXt is a new CNN architechture following the ResNet. The paper is here.">
-<meta name="keywords" content="deep learning">
+<meta name="description" content="What is unit testing?When doing unit testing, you break your codes into small units (mostly functions), and test if each unit works as expected. Generally the tests are written in the form of function">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ResNeXt paper note">
-<meta property="og:url" content="http://yoursite.com/2017/07/20/ResNeXt-paper-note/index.html">
+<meta property="og:title" content="Unit testing in Python">
+<meta property="og:url" content="http://yoursite.com/2017/07/20/Unit-testing-in-Python/index.html">
 <meta property="og:site_name" content="Changsong&#39;s Blog">
-<meta property="og:description" content="ResNeXt is a new CNN architechture following the ResNet. The paper is here.">
-<meta property="og:image" content="https://pic2.zhimg.com/v2-f7c3928bb54a9858a27cadaa94d465ed_b.png">
-<meta property="og:image" content="https://pic2.zhimg.com/v2-7621a07b591416e8792cfa6b305ea35d_b.png">
-<meta property="og:updated_time" content="2017-07-21T04:04:21.000Z">
+<meta property="og:description" content="What is unit testing?When doing unit testing, you break your codes into small units (mostly functions), and test if each unit works as expected. Generally the tests are written in the form of function">
+<meta property="og:updated_time" content="2017-07-21T04:33:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ResNeXt paper note">
-<meta name="twitter:description" content="ResNeXt is a new CNN architechture following the ResNet. The paper is here.">
-<meta name="twitter:image" content="https://pic2.zhimg.com/v2-f7c3928bb54a9858a27cadaa94d465ed_b.png">
+<meta name="twitter:title" content="Unit testing in Python">
+<meta name="twitter:description" content="What is unit testing?When doing unit testing, you break your codes into small units (mostly functions), and test if each unit works as expected. Generally the tests are written in the form of function">
 
 
 
@@ -131,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/20/ResNeXt-paper-note/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/07/20/Unit-testing-in-Python/"/>
 
 
 
 
 
-  <title>ResNeXt paper note | Changsong's Blog</title>
+  <title>Unit testing in Python | Changsong's Blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -247,7 +244,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/ResNeXt-paper-note/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/Unit-testing-in-Python/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Changsong Dong">
@@ -264,7 +261,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ResNeXt paper note</h1>
+          <h1 class="post-title" itemprop="name headline">Unit testing in Python</h1>
         
 
         <div class="post-meta">
@@ -276,7 +273,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-20T23:02:58-05:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-20T23:12:43-05:00">
                 2017-07-20
               </time>
             
@@ -295,9 +292,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/07/20/ResNeXt-paper-note/#comments" itemprop="discussionUrl">
+                <a href="/2017/07/20/Unit-testing-in-Python/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/20/ResNeXt-paper-note/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/07/20/Unit-testing-in-Python/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -305,7 +302,7 @@
 
           
           
-             <span id="/2017/07/20/ResNeXt-paper-note/" class="leancloud_visitors" data-flag-title="ResNeXt paper note">
+             <span id="/2017/07/20/Unit-testing-in-Python/" class="leancloud_visitors" data-flag-title="Unit testing in Python">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -333,15 +330,75 @@
       
 
       
-        <p>ResNeXt is a new CNN architechture following the ResNet. The paper is <a href="https://arxiv.org/pdf/1611.05431.pdf" target="_blank" rel="external">here</a>.<br><a id="more"></a></p>
-<h3 id="ResNeXt"><a href="#ResNeXt" class="headerlink" title="ResNeXt"></a>ResNeXt</h3><p>According to the paper, ResNeXt with 100 layers can outperform ResNet with 200 layers, while having only 50% complexity. The special architecture ResNeXt has is the use of group convolution. In addition to depth and width, the paper proposed a new dimension called <em>cardinality</em>. And increasing cardinality can lead to an improvement in model performance.</p>
-<p>Below is the comparison of ResNet (left) and ResNeXt (right).<br><img src="https://pic2.zhimg.com/v2-f7c3928bb54a9858a27cadaa94d465ed_b.png" alt=""><br>For ResNeXt, we still have one shortcut just like ResNet. But the convolutional layers are divided into different branches. And the number of the branches is called <em>“cardinality”</em>. And ResNeXt has a similar amount of parameters compared with ResNet.</p>
-<h3 id="Group-Convolution"><a href="#Group-Convolution" class="headerlink" title="Group Convolution"></a>Group Convolution</h3><p>First let’s recall the concept of convolutional layer. In each convolutional layer, we have a certain numebr of kernels (e.g. 64, 128, 256). Each kernel is a 3D block with size of (C, K, K). C is the input data depth (or the number of the input data channels or the number of feature maps of last layer’s output). K is the kernel size (e.g. 3 in above image). Each kernel will scan through the input and output one feature map. So the number of output feature maps of this convolutional layer is the number of kernels.</p>
-<p>Several years ago, when we don’t have enough memory in one GPU, we split kernels into different groups and feed the groups into different GPUs. As we discussed above, each kernel will generate one feature map. So after grouping the kernels, each group will generate part of the output feature maps. This is called group convolution.</p>
-<p>Now we already have enough memory in GPUs to accommodate all the kernels, but ResNeXt reintroduces the idea of group convolution to improve the model performance.</p>
-<p><img src="https://pic2.zhimg.com/v2-7621a07b591416e8792cfa6b305ea35d_b.png" alt=""></p>
-<p>Now it will not be hard to understand the key idea of ResNext. Above image shows three equivalent network architectures. By using groups, the model can improve accuracy when maintaining the model complexity and number of parameters.</p>
-<p>ResNeXt has also been adopted in <a href="https://arxiv.org/pdf/1703.06870.pdf" target="_blank" rel="external">Mask R-CNN</a> that achieves state-of-the-art results on COCO instance segmentation and object detection tasks.</p>
+        <h3 id="What-is-unit-testing"><a href="#What-is-unit-testing" class="headerlink" title="What is unit testing?"></a>What is unit testing?</h3><p>When doing unit testing, you break your codes into small units (mostly functions), and test if each unit works as expected. Generally the tests are written in the form of functions that will determine whether a returned value equals the value you were expecting when you wrote the function.</p>
+<h3 id="Unit-testing-framework-in-Python"><a href="#Unit-testing-framework-in-Python" class="headerlink" title="Unit testing framework in Python"></a>Unit testing framework in Python</h3><p>Let’s say I write a simple math library called <em>Math</em>.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&quot;&quot;&quot;A simple math library&quot;&quot;&quot;</div><div class="line"></div><div class="line">class Math(object):</div><div class="line">&quot;&quot;&quot;An example class for unit testing&quot;&quot;&quot;</div><div class="line">    def __init__(self):</div><div class="line">        pass</div><div class="line">        </div><div class="line">    def multiply(self, multiplier, multiplicand):</div><div class="line">        &quot;&quot;&quot;Multipy two numbers</div><div class="line">          Args:</div><div class="line">            multiplier: int, float or long.</div><div class="line">            multiplicand: int, float or long</div><div class="line">          Returns:</div><div class="line">            The result of the multiplication.                     </div><div class="line">        &quot;&quot;&quot;</div><div class="line">        return multiplier * multiplicand</div><div class="line">        </div><div class="line">        def isLessThan(self, n, m):</div><div class="line">            &quot;&quot;&quot;Compare two numbers.</div><div class="line">              Args:</div><div class="line">                n, m: int, floar or long</div><div class="line">              Returns:</div><div class="line">                True if n is less than m, otherwise false.</div><div class="line">            &quot;&quot;&quot;</div><div class="line">            return n &lt; m</div></pre></td></tr></table></figure></p>
+<p>Then I write another file called <em>test_math.py</em> for unit testing.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&quot;&quot;&quot;An unit testing example for the simple math library&quot;&quot;&quot;</div><div class="line"></div><div class="line">import unittest</div><div class="line">from math import Math</div><div class="line"></div><div class="line">class MathTest(unittest.TestCase):</div><div class="line">    def setUp(self):</div><div class="line">        self.math = Math()</div><div class="line">  </div><div class="line">    def tearDown(self):</div><div class="line">        pass</div><div class="line">        </div><div class="line">    def test_multiply_int(self):</div><div class="line">        self.assertEqual(self.math.multiply(3, 5), 15)</div><div class="line">        </div><div class="line">    def test_multipy_float(self):</div><div class="line">        self.assertEqual(self.math.multiply(3.0, 5.0), 15.0)</div><div class="line"></div><div class="line">    def test_is_less_than(self):</div><div class="line">        self.assertTrue(self.math.isLessThan(4, 18))</div><div class="line"></div><div class="line">if __name__ == &apos;__main__&apos;:</div><div class="line">  unittest.main()</div></pre></td></tr></table></figure></p>
+<p>For creating test cases, we need to define our own class by subclassing <strong>unittest.TestCase</strong>. </p>
+<p>The setUp() and tearDown() methods allow you to define instructions that will be executed before and after each test method. So in our <em>MathTest</em> class, before each test method, a <em>self.math</em> will be created and after the excution of the test method, the <em>tearDown</em> method will be called. If you donnot have a class to test, you may drop the setUp() and tearDown() methods and simply run test methods.</p>
+<p>The test method must start with <em>test_</em>.</p>
+<p>Now run the test file in terminal.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">int3@int3:~/Changsong$ python test_math.py </div><div class="line">...</div><div class="line">----------------------------------------------------------------------</div><div class="line">Ran 3 tests in 0.000s</div><div class="line"></div><div class="line">OK</div></pre></td></tr></table></figure></p>
+<p>We can see that the three tests are ran and passed!</p>
+<p>The <strong>TestCase</strong> class provides several assert methods to check for and report failures. The following table lists the most commonly used methods.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Checks that</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>assertEqual(a, b)</td>
+<td>a == b</td>
+</tr>
+<tr>
+<td>assertNotEqual(a, b)</td>
+<td>a != b</td>
+</tr>
+<tr>
+<td>assertTrue(x)</td>
+<td>bool(x) is True</td>
+</tr>
+<tr>
+<td>assertFalse(x)</td>
+<td>bool(x) is False</td>
+</tr>
+<tr>
+<td>assertIs(a, b)</td>
+<td>a is b</td>
+</tr>
+<tr>
+<td>assertIsNot(a, b)</td>
+<td>a is not b</td>
+</tr>
+<tr>
+<td>assertIsNone(x)</td>
+<td>x is None</td>
+</tr>
+<tr>
+<td>assertIsNotNone(x)</td>
+<td>x is not None</td>
+</tr>
+<tr>
+<td>assertIn(a, b)</td>
+<td>a in b</td>
+</tr>
+<tr>
+<td>assertNotIn(a, b)</td>
+<td>a not in b</td>
+</tr>
+<tr>
+<td>assertIsInstance(a, b)</td>
+<td>isinstance(a, b)</td>
+</tr>
+<tr>
+<td>assertNotIsInstance(a, b)</td>
+<td>not isinstance(a, b)</td>
+</tr>
+</tbody>
+</table>
+<p>###When should you perform unit testing?<br>As often as possible.</p>
+<p>Test every function you write in the development process. </p>
 
       
     </div>
@@ -371,7 +428,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/deep-learning/" rel="tag"># deep learning</a>
+            <a href="/tags/Python/" rel="tag"># Python</a>
           
         </div>
       
@@ -384,8 +441,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/12/Do-you-really-know-the-linear-classifier-basics/" rel="next" title="Do you really know the linear classifier basics?">
-                <i class="fa fa-chevron-left"></i> Do you really know the linear classifier basics?
+              <a href="/2017/07/20/ResNeXt-paper-note/" rel="next" title="ResNeXt paper note">
+                <i class="fa fa-chevron-left"></i> ResNeXt paper note
               </a>
             
           </div>
@@ -393,10 +450,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/20/Unit-testing-in-Python/" rel="prev" title="Unit testing in Python">
-                Unit testing in Python <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -543,7 +596,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ResNeXt"><span class="nav-number">1.</span> <span class="nav-text">ResNeXt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Group-Convolution"><span class="nav-number">2.</span> <span class="nav-text">Group Convolution</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-unit-testing"><span class="nav-number">1.</span> <span class="nav-text">What is unit testing?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unit-testing-framework-in-Python"><span class="nav-number">2.</span> <span class="nav-text">Unit testing framework in Python</span></a></li></ol></div>
             
 
           </div>
@@ -693,9 +746,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/07/20/ResNeXt-paper-note/';
-          this.page.identifier = '2017/07/20/ResNeXt-paper-note/';
-          this.page.title = 'ResNeXt paper note';
+          this.page.url = 'http://yoursite.com/2017/07/20/Unit-testing-in-Python/';
+          this.page.identifier = '2017/07/20/Unit-testing-in-Python/';
+          this.page.title = 'Unit testing in Python';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://dcsds1.disqus.com/embed.js';
