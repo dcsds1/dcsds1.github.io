@@ -330,78 +330,14 @@
 
       
         
-          
-            <h3 id="What-is-unit-testing"><a href="#What-is-unit-testing" class="headerlink" title="What is unit testing?"></a>What is unit testing?</h3><p>When doing unit testing, you break your codes into small units (mostly functions), and test if each unit works as expected. Generally the tests are written in the form of functions that will determine whether a returned value equals the value you were expecting when you wrote the function.</p>
-<h3 id="Unit-testing-framework-in-Python"><a href="#Unit-testing-framework-in-Python" class="headerlink" title="Unit testing framework in Python"></a>Unit testing framework in Python</h3><p>Let’s say I write a simple math library called <em>Math</em>.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&quot;&quot;&quot;A simple math library&quot;&quot;&quot;</div><div class="line"></div><div class="line">class Math(object):</div><div class="line">&quot;&quot;&quot;An example class for unit testing&quot;&quot;&quot;</div><div class="line">    def __init__(self):</div><div class="line">        pass</div><div class="line">        </div><div class="line">    def multiply(self, multiplier, multiplicand):</div><div class="line">        &quot;&quot;&quot;Multipy two numbers</div><div class="line">          Args:</div><div class="line">            multiplier: int, float or long.</div><div class="line">            multiplicand: int, float or long</div><div class="line">          Returns:</div><div class="line">            The result of the multiplication.                     </div><div class="line">        &quot;&quot;&quot;</div><div class="line">        return multiplier * multiplicand</div><div class="line">        </div><div class="line">        def isLessThan(self, n, m):</div><div class="line">            &quot;&quot;&quot;Compare two numbers.</div><div class="line">              Args:</div><div class="line">                n, m: int, floar or long</div><div class="line">              Returns:</div><div class="line">                True if n is less than m, otherwise false.</div><div class="line">            &quot;&quot;&quot;</div><div class="line">            return n &lt; m</div></pre></td></tr></table></figure></p>
-<p>Then I write another file called <em>test_math.py</em> for unit testing.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&quot;&quot;&quot;An unit testing example for the simple math library&quot;&quot;&quot;</div><div class="line"></div><div class="line">import unittest</div><div class="line">from math import Math</div><div class="line"></div><div class="line">class MathTest(unittest.TestCase):</div><div class="line">    def setUp(self):</div><div class="line">        self.math = Math()</div><div class="line">  </div><div class="line">    def tearDown(self):</div><div class="line">        pass</div><div class="line">        </div><div class="line">    def test_multiply_int(self):</div><div class="line">        self.assertEqual(self.math.multiply(3, 5), 15)</div><div class="line">        </div><div class="line">    def test_multipy_float(self):</div><div class="line">        self.assertEqual(self.math.multiply(3.0, 5.0), 15.0)</div><div class="line"></div><div class="line">    def test_is_less_than(self):</div><div class="line">        self.assertTrue(self.math.isLessThan(4, 18))</div><div class="line"></div><div class="line">if __name__ == &apos;__main__&apos;:</div><div class="line">  unittest.main()</div></pre></td></tr></table></figure></p>
-<p>For creating test cases, we need to define our own class by subclassing <strong>unittest.TestCase</strong>. </p>
-<p>The setUp() and tearDown() methods allow you to define instructions that will be executed before and after each test method. So in our <em>MathTest</em> class, before each test method, a <em>self.math</em> will be created and after the excution of the test method, the <em>tearDown</em> method will be called. If you donnot have a class to test, you may drop the setUp() and tearDown() methods and simply run test methods.</p>
-<p>The test method must start with <em>test_</em>.</p>
-<p>Now run the test file in terminal.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">int3@int3:~/Changsong$ python test_math.py </div><div class="line">...</div><div class="line">----------------------------------------------------------------------</div><div class="line">Ran 3 tests in 0.000s</div><div class="line"></div><div class="line">OK</div></pre></td></tr></table></figure></p>
-<p>We can see that the three tests are ran and passed!</p>
-<p>The <strong>TestCase</strong> class provides several assert methods to check for and report failures. The following table lists the most commonly used methods.</p>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Checks that</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>assertEqual(a, b)</td>
-<td>a == b</td>
-</tr>
-<tr>
-<td>assertNotEqual(a, b)</td>
-<td>a != b</td>
-</tr>
-<tr>
-<td>assertTrue(x)</td>
-<td>bool(x) is True</td>
-</tr>
-<tr>
-<td>assertFalse(x)</td>
-<td>bool(x) is False</td>
-</tr>
-<tr>
-<td>assertIs(a, b)</td>
-<td>a is b</td>
-</tr>
-<tr>
-<td>assertIsNot(a, b)</td>
-<td>a is not b</td>
-</tr>
-<tr>
-<td>assertIsNone(x)</td>
-<td>x is None</td>
-</tr>
-<tr>
-<td>assertIsNotNone(x)</td>
-<td>x is not None</td>
-</tr>
-<tr>
-<td>assertIn(a, b)</td>
-<td>a in b</td>
-</tr>
-<tr>
-<td>assertNotIn(a, b)</td>
-<td>a not in b</td>
-</tr>
-<tr>
-<td>assertIsInstance(a, b)</td>
-<td>isinstance(a, b)</td>
-</tr>
-<tr>
-<td>assertNotIsInstance(a, b)</td>
-<td>not isinstance(a, b)</td>
-</tr>
-</tbody>
-</table>
-<p>###When should you perform unit testing?<br>As often as possible.</p>
-<p>Test every function you write in the development process. </p>
-
-          
+          <h3 id="What-is-unit-testing"><a href="#What-is-unit-testing" class="headerlink" title="What is unit testing?"></a>What is unit testing?</h3><p>When doing unit testing, you break your codes into small units (mostly functions), and test if each unit works as expected. Generally the tests are written in the form of functions that will determine whether a returned value equals the value you were expecting when you wrote the function.<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/20/Unit-testing-in-Python/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
