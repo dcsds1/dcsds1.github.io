@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="deep learning," />
 
 
 
@@ -90,16 +90,20 @@
 
 
 
-<meta name="description" content="This is my first post.I will write down my thoughts in this blog.">
+<meta name="description" content="ResNeXt is a new CNN architechture following the ResNet. The paper is here.">
+<meta name="keywords" content="deep learning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="My first post">
-<meta property="og:url" content="http://yoursite.com/2017/05/19/My-first-post/index.html">
+<meta property="og:title" content="ResNeXt paper note">
+<meta property="og:url" content="http://yoursite.com/2017/07/20/ResNeXt-paper-note/index.html">
 <meta property="og:site_name" content="Changsong&#39;s Blog">
-<meta property="og:description" content="This is my first post.I will write down my thoughts in this blog.">
-<meta property="og:updated_time" content="2017-05-19T04:44:53.000Z">
+<meta property="og:description" content="ResNeXt is a new CNN architechture following the ResNet. The paper is here.">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-f7c3928bb54a9858a27cadaa94d465ed_b.png">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-7621a07b591416e8792cfa6b305ea35d_b.png">
+<meta property="og:updated_time" content="2017-07-21T04:04:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="My first post">
-<meta name="twitter:description" content="This is my first post.I will write down my thoughts in this blog.">
+<meta name="twitter:title" content="ResNeXt paper note">
+<meta name="twitter:description" content="ResNeXt is a new CNN architechture following the ResNet. The paper is here.">
+<meta name="twitter:image" content="https://pic2.zhimg.com/v2-f7c3928bb54a9858a27cadaa94d465ed_b.png">
 
 
 
@@ -127,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/19/My-first-post/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/07/20/ResNeXt-paper-note/"/>
 
 
 
 
 
-  <title>My first post | Changsong's Blog</title>
+  <title>ResNeXt paper note | Changsong's Blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -243,7 +247,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/19/My-first-post/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/ResNeXt-paper-note/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Changsong Dong">
@@ -260,7 +264,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">My first post</h1>
+          <h1 class="post-title" itemprop="name headline">ResNeXt paper note</h1>
         
 
         <div class="post-meta">
@@ -272,8 +276,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-19T08:51:37-05:00">
-                2017-05-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-20T23:02:58-05:00">
+                2017-07-20
               </time>
             
 
@@ -291,9 +295,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/05/19/My-first-post/#comments" itemprop="discussionUrl">
+                <a href="/2017/07/20/ResNeXt-paper-note/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/05/19/My-first-post/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/07/20/ResNeXt-paper-note/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -301,7 +305,7 @@
 
           
           
-             <span id="/2017/05/19/My-first-post/" class="leancloud_visitors" data-flag-title="My first post">
+             <span id="/2017/07/20/ResNeXt-paper-note/" class="leancloud_visitors" data-flag-title="ResNeXt paper note">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -329,7 +333,15 @@
       
 
       
-        <p>This is my first post.<br>I will write down my thoughts in this blog.</p>
+        <p>ResNeXt is a new CNN architechture following the ResNet. The paper is <a href="https://arxiv.org/pdf/1611.05431.pdf" target="_blank" rel="external">here</a>.<br><a id="more"></a></p>
+<h3 id="ResNeXt"><a href="#ResNeXt" class="headerlink" title="ResNeXt"></a>ResNeXt</h3><p>According to the paper, ResNeXt with 100 layers can outperform ResNet with 200 layers, while having only 50% complexity. The special architecture ResNeXt has is the use of group convolution. In addition to depth and width, the paper proposed a new dimension called <em>cardinality</em>. And increasing cardinality can lead to an improvement in model performance.</p>
+<p>Below is the comparison of ResNet (left) and ResNeXt (right).<br><img src="https://pic2.zhimg.com/v2-f7c3928bb54a9858a27cadaa94d465ed_b.png" alt=""><br>For ResNeXt, we still have one shortcut just like ResNet. But the convolutional layers are divided into different branches. And the number of the branches is called <em>“cardinality”</em>. And ResNeXt has a similar amount of parameters compared with ResNet.</p>
+<h3 id="Group-Convolution"><a href="#Group-Convolution" class="headerlink" title="Group Convolution"></a>Group Convolution</h3><p>First let’s recall the concept of convolutional layer. In each convolutional layer, we have a certain numebr of kernels (e.g. 64, 128, 256). Each kernel is a 3D block with size of (C, K, K). C is the input data depth (or the number of the input data channels or the number of feature maps of last layer’s output). K is the kernel size (e.g. 3 in above image). Each kernel will scan through the input and output one feature map. So the number of output feature maps of this convolutional layer is the number of kernels.</p>
+<p>Several years ago, when we don’t have enough memory in one GPU, we split kernels into different groups and feed the groups into different GPUs. As we discussed above, each kernel will generate one feature map. So after grouping the kernels, each group will generate part of the output feature maps. This is called group convolution.</p>
+<p>Now we already have enough memory in GPUs to accommodate all the kernels, but ResNeXt reintroduces the idea of group convolution to improve the model performance.</p>
+<p><img src="https://pic2.zhimg.com/v2-7621a07b591416e8792cfa6b305ea35d_b.png" alt=""></p>
+<p>Now it will not be hard to understand the key idea of ResNext. Above image shows three equivalent network architectures. By using groups, the model can improve accuracy when maintaining the model complexity and number of parameters.</p>
+<p>ResNeXt has also been adopted in <a href="https://arxiv.org/pdf/1703.06870.pdf" target="_blank" rel="external">Mask R-CNN</a> that achieves state-of-the-art results on COCO instance segmentation and object detection tasks.</p>
 
       
     </div>
@@ -357,6 +369,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/deep-learning/" rel="tag"># deep learning</a>
+          
+        </div>
+      
 
       
         
@@ -366,15 +384,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/07/12/Do-you-really-know-the-linear-classifier-basics/" rel="next" title="Do you really know the linear classifier basics?">
+                <i class="fa fa-chevron-left"></i> Do you really know the linear classifier basics?
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/22/detectors/" rel="prev" title="Comparing CNN based object detectors">
-                Comparing CNN based object detectors <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -428,8 +446,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://snag.gy/AoQFRM.jpg"
@@ -502,6 +529,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ResNeXt"><span class="nav-number">1.</span> <span class="nav-text">ResNeXt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Group-Convolution"><span class="nav-number">2.</span> <span class="nav-text">Group Convolution</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -646,9 +689,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/05/19/My-first-post/';
-          this.page.identifier = '2017/05/19/My-first-post/';
-          this.page.title = 'My first post';
+          this.page.url = 'http://yoursite.com/2017/07/20/ResNeXt-paper-note/';
+          this.page.identifier = '2017/07/20/ResNeXt-paper-note/';
+          this.page.title = 'ResNeXt paper note';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://dcsds1.disqus.com/embed.js';
