@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="machine learning," />
+  <meta name="keywords" content="deep learning," />
 
 
 
@@ -90,19 +90,17 @@
 
 
 
-<meta name="description" content="MathJax.Hub.Config({   tex2jax: {inlineMath: [[&apos;$&apos;,&apos;$&apos;], [&apos;\\(&apos;,&apos;\\)&apos;]]} });      Let’s talk about a simple linear classifier: $$f(x_i, W, b) = Wx_i + b$$  What does one row of the weight matrix repr">
-<meta name="keywords" content="machine learning">
+<meta name="description" content="We usually see two problems when training a CNN. The first one is that the model performs bad on the training data (optimization problem). The second one is that the model performs good on the trainin">
+<meta name="keywords" content="deep learning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Do you really know the linear classifier basics?">
-<meta property="og:url" content="http://yoursite.com/2017/07/12/Do-you-really-know-the-linear-classifier-basics/index.html">
+<meta property="og:title" content="Experience in training CNN">
+<meta property="og:url" content="http://yoursite.com/2017/07/21/Experience-in-training-CNN/index.html">
 <meta property="og:site_name" content="Changsong&#39;s Blog">
-<meta property="og:description" content="MathJax.Hub.Config({   tex2jax: {inlineMath: [[&apos;$&apos;,&apos;$&apos;], [&apos;\\(&apos;,&apos;\\)&apos;]]} });      Let’s talk about a simple linear classifier: $$f(x_i, W, b) = Wx_i + b$$  What does one row of the weight matrix repr">
-<meta property="og:image" content="https://qph.ec.quoracdn.net/main-qimg-c0bb76e8e57e9a33170c45265eadb213.webp">
-<meta property="og:updated_time" content="2017-07-13T02:03:50.000Z">
+<meta property="og:description" content="We usually see two problems when training a CNN. The first one is that the model performs bad on the training data (optimization problem). The second one is that the model performs good on the trainin">
+<meta property="og:updated_time" content="2017-07-22T01:18:32.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Do you really know the linear classifier basics?">
-<meta name="twitter:description" content="MathJax.Hub.Config({   tex2jax: {inlineMath: [[&apos;$&apos;,&apos;$&apos;], [&apos;\\(&apos;,&apos;\\)&apos;]]} });      Let’s talk about a simple linear classifier: $$f(x_i, W, b) = Wx_i + b$$  What does one row of the weight matrix repr">
-<meta name="twitter:image" content="https://qph.ec.quoracdn.net/main-qimg-c0bb76e8e57e9a33170c45265eadb213.webp">
+<meta name="twitter:title" content="Experience in training CNN">
+<meta name="twitter:description" content="We usually see two problems when training a CNN. The first one is that the model performs bad on the training data (optimization problem). The second one is that the model performs good on the trainin">
 
 
 
@@ -130,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/12/Do-you-really-know-the-linear-classifier-basics/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/07/21/Experience-in-training-CNN/"/>
 
 
 
 
 
-  <title>Do you really know the linear classifier basics? | Changsong's Blog</title>
+  <title>Experience in training CNN | Changsong's Blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -246,7 +244,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/12/Do-you-really-know-the-linear-classifier-basics/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/21/Experience-in-training-CNN/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Changsong Dong">
@@ -263,7 +261,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Do you really know the linear classifier basics?</h1>
+          <h1 class="post-title" itemprop="name headline">Experience in training CNN</h1>
         
 
         <div class="post-meta">
@@ -275,8 +273,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-12T19:47:36-05:00">
-                2017-07-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-21T20:16:25-05:00">
+                2017-07-21
               </time>
             
 
@@ -294,9 +292,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/07/12/Do-you-really-know-the-linear-classifier-basics/#comments" itemprop="discussionUrl">
+                <a href="/2017/07/21/Experience-in-training-CNN/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/12/Do-you-really-know-the-linear-classifier-basics/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/07/21/Experience-in-training-CNN/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -304,7 +302,7 @@
 
           
           
-             <span id="/2017/07/12/Do-you-really-know-the-linear-classifier-basics/" class="leancloud_visitors" data-flag-title="Do you really know the linear classifier basics?">
+             <span id="/2017/07/21/Experience-in-training-CNN/" class="leancloud_visitors" data-flag-title="Experience in training CNN">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -332,40 +330,12 @@
       
 
       
-        <script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-});
-</script>
-
-<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-
-<p>Let’s talk about a simple linear classifier: $$f(x_i, W, b) = Wx_i + b$$</p>
-<ol>
-<li><p>What does one row of the weight matrix represent?</p>
+        <p>We usually see two problems when training a CNN. The first one is that the model performs bad on the training data (optimization problem). The second one is that the model performs good on the training data but bad on the validation data (overfitting).</p>
 <a id="more"></a>
-<p>Each row of the weight matrix is a classifier for one certain class. Or we can say each row is a template. In this way, linear classifiers can be interpreted as template matching.</p>
-</li>
-<li><p>If the (binary) linear classifier is a line in a 2d plane, what does the weight matrix and bias control?<br>If we change the weight matrix the line will rotate in the 2d plane. If we change the bias, the line will translate in the 2d plane. Weights and bias are all learnable.</p>
-</li>
-<li><p>Why we need the bias term?<br>Without the bias terms, plugging in $x_i=0$ would always give score of zero regardless of the weights, so that all lines would be forced to cross the origin.<br><img src="https://qph.ec.quoracdn.net/main-qimg-c0bb76e8e57e9a33170c45265eadb213.webp" alt=""></p>
-</li>
-<li><p>What data preprocessing you usually do before training the classifier?<br>(1) Center the data by subtracting the dataset mean from every feature (e.g. normalize the images by subtracting the mean per channel calculated over all images).<br>(2) Normalize (scale) the data so that its values range from [-1, 1].</p>
-</li>
-<li><p>Why we want to penalize large weights using, for example,  L2 norm?<br>The most appealing property is that penalizing large weights tends to improve generalization, because it means that no input dimension can have a very large influence on the scores all by itself. Since the L2 penalty prefers smaller and more diffuse weight vectors, the final classifier is encouraged to take into account all input dimensions to small amounts rather than a few input dimensions and very strongly.</p>
-</li>
-<li><p>What is the form of a cross-entropy loss?<br>$$L_i = -log( \frac{e^{f_{y_i}}}{ \sum_j e^{f_j}})$$</p>
-</li>
-<li><p>What problem you might encounter when coding a Softmax function?<br>Overflow or underflow. the intermediate terms may be very large due to the exponentials. Dividing large numbers can be numerically unstable, so it is important to use a normalization trick. </p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import numpy as np</div><div class="line">&gt;&gt;&gt; f = np.array([123, 456, 789]) </div><div class="line">&gt;&gt;&gt; p = np.exp(f) / np.sum(np.exp(f))</div><div class="line">__main__:1: RuntimeWarning: overflow encountered in exp</div><div class="line">__main__:1: RuntimeWarning: invalid value encountered in divide</div><div class="line">&gt;&gt;&gt; np.exp(f)</div><div class="line">array([  2.61951732e+053,   1.09215367e+198,               inf])</div><div class="line">&gt;&gt;&gt; np.sum(np.exp(f))</div><div class="line">inf</div></pre></td></tr></table></figure>
-<p>We can solve this problem by multiplying the top and bottom of the fraction by a constant <em>C</em> and push it into the sum. A common choice for <em>C</em> is to set $$logC = -max_j f_j$$<br>This simply states that we should shift the values inside the vector <em>f</em> so that the highest value is zero.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; f -= np.max(f)</div><div class="line">&gt;&gt;&gt; p = np.exp(f) / np.sum(np.exp(f))</div><div class="line">&gt;&gt;&gt; p</div><div class="line">array([  5.75274406e-290,   2.39848787e-145,   1.00000000e+000])</div></pre></td></tr></table></figure>
-<ol>
-<li>Final challenge: can you write down back propagation of a 2-layer neral network.</li>
-</ol>
+<p>For overfitting, one possible reason is your training data is very different with your validation data. This can be caused by many reasons. You may collected the two datasets on different time. You may used different data collectiong strategies. To solve this kind of problem, you can try to visualize the data and get an intuitive feeling of the data. For the simplest case, you may found that the validation dataset contains more images collected at night. Then you can add this kind of data to your training set or try some data augmentation techniques to generate similar images from your training set to solve this problem. How to solve the dataset inconsistency problem highly depends on your dataset. <a href="http://blog.kaggle.com/2017/07/07/the-nature-conservancy-fisheries-monitoring-competition-1st-place-winners-interview-team-towards-robust-optimal-learning-of-learning/" target="_blank" rel="external">Here</a> is an example from a kaggle winner.</p>
+<p>After solving the dataset inconsistency problem, what we need to do is to decrease the loss on the training dataset.</p>
+<p>Sometimes, you will see that some activation layers are dead (the output is always zero). You can first check if you have added batch normalization before the activation layer. I you already have the batch normalizaiton layer, you can check if <em>eps</em> is set to be too big. If the problem is caused by ReLU, you can try to midify the initializaiton of <em>bias</em> and <em>beta</em> in BN (e.g. set it to be +1). If the first activation layer is outputting zero, then you might want to check your input data’s preprocessing and parameters intialization.</p>
+<p>After building a good dataset and reducing loss on training dataset, we should care more about the model’s performance on validation dataset. We should keep increasing the capability of out model until we see overfitting. If the model cannot perfectly overfit the training dataset, there might be some false labeled data in our dataset.</p>
 
       
     </div>
@@ -395,7 +365,7 @@ MathJax.Hub.Config({
       
         <div class="post-tags">
           
-            <a href="/tags/machine-learning/" rel="tag"># machine learning</a>
+            <a href="/tags/deep-learning/" rel="tag"># deep learning</a>
           
         </div>
       
@@ -408,8 +378,8 @@ MathJax.Hub.Config({
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/06/Python-random-module-why-we-need-to-set-seed/" rel="next" title="Python random module: why we need to set seed?">
-                <i class="fa fa-chevron-left"></i> Python random module: why we need to set seed?
+              <a href="/2017/07/20/Do-you-really-know-CNN-basics/" rel="next" title="Do you really know CNN basics?">
+                <i class="fa fa-chevron-left"></i> Do you really know CNN basics?
               </a>
             
           </div>
@@ -417,10 +387,6 @@ MathJax.Hub.Config({
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/20/ResNeXt-paper-note/" rel="prev" title="ResNeXt paper note">
-                ResNeXt paper note <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -692,9 +658,9 @@ MathJax.Hub.Config({
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/07/12/Do-you-really-know-the-linear-classifier-basics/';
-          this.page.identifier = '2017/07/12/Do-you-really-know-the-linear-classifier-basics/';
-          this.page.title = 'Do you really know the linear classifier basics?';
+          this.page.url = 'http://yoursite.com/2017/07/21/Experience-in-training-CNN/';
+          this.page.identifier = '2017/07/21/Experience-in-training-CNN/';
+          this.page.title = 'Experience in training CNN';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://dcsds1.disqus.com/embed.js';
