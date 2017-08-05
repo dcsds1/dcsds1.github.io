@@ -98,7 +98,7 @@
 <meta property="og:site_name" content="Changsong&#39;s Blog">
 <meta property="og:description" content="MathJax.Hub.Config({   tex2jax: {inlineMath: [[&apos;$&apos;,&apos;$&apos;], [&apos;\\(&apos;,&apos;\\)&apos;]]} });       Let’s use a simple example to explain some terms. For one dataset of points in a 2-D plane, there might be many curv">
 <meta property="og:image" content="https://i.imgur.com/grZO5Wo.png">
-<meta property="og:updated_time" content="2017-08-05T23:07:12.000Z">
+<meta property="og:updated_time" content="2017-08-05T23:07:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Some introductory terms for machine learning">
 <meta name="twitter:description" content="MathJax.Hub.Config({   tex2jax: {inlineMath: [[&apos;$&apos;,&apos;$&apos;], [&apos;\\(&apos;,&apos;\\)&apos;]]} });       Let’s use a simple example to explain some terms. For one dataset of points in a 2-D plane, there might be many curv">
@@ -349,7 +349,7 @@ MathJax.Hub.Config({
 <h3 id="Performance-Measurement"><a href="#Performance-Measurement" class="headerlink" title="Performance Measurement"></a>Performance Measurement</h3><p><strong>Precision</strong> and <strong>recall</strong> are two common performance measurements we use.<br>\begin{tabular}{|c|c|c|}<br>\hline<br>Data Label &amp; Predicted as Positive &amp; Predicted as Negative<br>\hline<br>Positive &amp; True Positive &amp; False Negative<br>Negative &amp; False Positive &amp; True Negative<br>\end{tabular}<br>According to data label and predicted results, we can devide data samples into<br>to four subsets (TP, FP, TN, FN).<br>Precision is defined as: $P = \frac{TP}{TP+FP}$<br>Recall is defined as: $R=\frac{TP}{TP+FN}$</p>
 <p>Usually, the higher the precision, the lower the recall rate. So we use <strong>F1</strong><br>to combine precision and recall into one formula.<br>$F1 = \frac{2*TP}{NUMSAMPLES + TP - TN}$</p>
 <p>$F_\beta  = \frac{(1+\beta^2)*P*R}{(\beta^2*P)+R}$<br>When beta equals to 1, F_beta is F1. When beta is greater than 1, recall has<br>more influence. When beta is smaller than 1, precision has more influence.</p>
-<p><strong>ROC</strong> and <strong>AUC</strong> are another way to measure models. For the ROC curve, the<br>x axis is False Positive Rate (FPR) and the y axis is True Positive Rate (TPR).<br>$TPR = \frac{TP}{TP+FN}$<br>$FPR = \frac{FP}{}FP+TN$<br>AUC is the area under the ROC curve. If one model’s ROC curve is totally under<br>another model’s ROC, then we say the latter model has better performance.</p>
+<p><strong>ROC</strong> and <strong>AUC</strong> are another way to measure models. For the ROC curve, the<br>x axis is False Positive Rate (FPR) and the y axis is True Positive Rate (TPR).<br>$TPR = \frac{TP}{TP+FN}$<br>$FPR = \frac{FP}{FP+TN}$<br>AUC is the area under the ROC curve. If one model’s ROC curve is totally under<br>another model’s ROC, then we say the latter model has better performance.</p>
 
       
     </div>
